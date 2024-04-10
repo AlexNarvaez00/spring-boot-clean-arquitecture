@@ -2,6 +2,11 @@ spring:
   application:
     name: Main
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/tutorias.itoaxaca
     username: postgres
     password: 123456789
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

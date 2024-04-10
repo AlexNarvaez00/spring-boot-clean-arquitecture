@@ -1,0 +1,11 @@
+
+GET http://localhost:8080/api/v1/departament
+
+###
+
+POST http://localhost:8080/api/v1/departament
+content-type: application/json
+
+{
+    "name": "Sistemas y computacion"
+}
