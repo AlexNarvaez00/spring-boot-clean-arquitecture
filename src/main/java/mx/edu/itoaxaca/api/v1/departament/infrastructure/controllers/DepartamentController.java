@@ -6,6 +6,7 @@ import mx.edu.itoaxaca.Routes;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentCreate;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentDestroy;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentGetAll;
+import mx.edu.itoaxaca.api.v1.departament.application.DepartamentGetById;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentUpdate;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.departament.domain.DepartamentRepository;
@@ -37,6 +38,11 @@ public class DepartamentController {
         return DepartamentGetAll.run(PageRequest.of(0, 10), this.repository);
     }
 
+    @GetMapping(value = "/{id}")
+    Departament show(@PathVariable UUID id) {
+        return DepartamentGetById.run(repository, id);
+    }
+
     @PostMapping(value = "")
     @ResponseStatus(value = HttpStatus.CREATED)
     Departament store(@Valid @RequestBody DepartamentStoreRequest request) {
@@ -45,7 +51,10 @@ public class DepartamentController {
 
     @PutMapping(value = Routes.API_V1_DEPARTAMENTE_UPDATE)
     @ResponseStatus(value = HttpStatus.ACCEPTED)
-    Departament update(@PathVariable UUID id, DepartamentUpdateRequest request) {
+    Departament update(
+        @PathVariable UUID id,
+        @Valid @RequestBody DepartamentUpdateRequest request
+    ) {
         return DepartamentUpdate.run(repository, request.asDepartament());
     }
 

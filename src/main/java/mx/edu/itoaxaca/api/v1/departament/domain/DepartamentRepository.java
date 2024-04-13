@@ -8,4 +8,5 @@ public interface DepartamentRepository {
     Departament save(Departament departament);
     Page<Departament> findAll(Pageable pageable);
     void deleteById(UUID id);
+    Departament findDepartamentById(UUID id);
 }

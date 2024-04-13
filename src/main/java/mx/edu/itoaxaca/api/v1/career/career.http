@@ -1,0 +1,11 @@
+GET http://localhost:8080/api/v1/career
+
+###
+
+POST http://localhost:8080/api/v1/career
+content-type: application/json
+
+{
+    "name": "Civil",
+    "departament_id":"35240eb9-4923-45fe-a0c9-5494b14b760e"
+}
