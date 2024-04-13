@@ -11,14 +11,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 
 @Entity
 @Table(name = "careers")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Career {
 
     @Id
@@ -31,5 +36,6 @@ public class Career {
 
     @ManyToOne
     @JoinColumn(name = "departament_id")
+    @JsonIgnore
     private Departament departament;
 }

@@ -8,5 +8,5 @@ public interface CareerRespository {
     Career save(Career career);
     Page<Career> findAll(Pageable pageable);
     void deleteById(UUID id);
-    Career findDepartamentById(UUID id);
+    Career findCareerById(UUID id);
 }

@@ -61,7 +61,6 @@ public class DepartamentController {
     @DeleteMapping(value = Routes.API_V1_DEPARTAMENTE_DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     void destroy(@PathVariable UUID id) {
-        System.out.println(id);
         DepartamentDestroy.run(this.repository, id);
     }
 }

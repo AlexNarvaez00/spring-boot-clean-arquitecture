@@ -2,10 +2,18 @@ GET http://localhost:8080/api/v1/career
 
 ###
 
+GET http://localhost:8080/api/v1/career/8620711d-f5d3-4707-97fe-8b15ce422bd7
+
+###
+
 POST http://localhost:8080/api/v1/career
 content-type: application/json
 
 {
-    "name": "Civil",
+    "name": "Mecanica",
     "departament_id":"35240eb9-4923-45fe-a0c9-5494b14b760e"
 }
+
+###
+
+DELETE  http://localhost:8080/api/v1/career/1ec1187b-f89f-4e06-bce8-1a39b626a714
