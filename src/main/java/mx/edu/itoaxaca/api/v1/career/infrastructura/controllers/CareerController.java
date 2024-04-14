@@ -1,6 +1,8 @@
 package mx.edu.itoaxaca.api.v1.career.infrastructura.controllers;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
 import java.util.UUID;
 import mx.edu.itoaxaca.Routes;
 import mx.edu.itoaxaca.api.v1.career.application.CareerCreate;
@@ -12,7 +14,6 @@ import mx.edu.itoaxaca.api.v1.career.domain.Career;
 import mx.edu.itoaxaca.api.v1.career.domain.CareerRespository;
 import mx.edu.itoaxaca.api.v1.career.domain.CareerStoreRequest;
 import mx.edu.itoaxaca.api.v1.career.domain.CareerUpdateRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -28,10 +29,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = Routes.API_V1_CAREER_BASE)
+@RequiredArgsConstructor
 public class CareerController {
 
-    @Autowired
-    public CareerRespository repo;
+    public final CareerRespository repo;
 
     @GetMapping(value = "")
     Page<Career> index() {
@@ -39,11 +40,11 @@ public class CareerController {
         return CareerGetAll.run(pageable, repo);
     }
 
-    @GetMapping( value = Routes.API_V1_CAREER_SHOW)
-    Career show(@PathVariable UUID id){
+    @GetMapping(value = Routes.API_V1_CAREER_SHOW)
+    Career show(@PathVariable UUID id) {
         return CareerGetById.run(repo, id);
     }
-    
+
     @PostMapping(value = "")
     Career store(@RequestBody CareerStoreRequest request) {
         return CareerCreate.run(repo, request.asCareer());

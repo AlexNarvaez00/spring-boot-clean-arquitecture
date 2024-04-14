@@ -11,7 +11,7 @@ POST http://localhost:8080/api/v1/departament
 content-type: application/json
 
 {
-    "name": "Administration"
+    "name": "Departamente {{$randomInt 100 1000}}"
 }
 
 ###

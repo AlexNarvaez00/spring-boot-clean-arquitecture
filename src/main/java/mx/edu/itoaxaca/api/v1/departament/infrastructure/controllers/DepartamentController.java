@@ -2,6 +2,7 @@ package mx.edu.itoaxaca.api.v1.departament.infrastructure.controllers;
 
 import jakarta.validation.Valid;
 import java.util.UUID;
+import lombok.RequiredArgsConstructor;
 import mx.edu.itoaxaca.Routes;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentCreate;
 import mx.edu.itoaxaca.api.v1.departament.application.DepartamentDestroy;
@@ -12,7 +13,6 @@ import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.departament.domain.DepartamentRepository;
 import mx.edu.itoaxaca.api.v1.departament.domain.DepartamentStoreRequest;
 import mx.edu.itoaxaca.api.v1.departament.domain.DepartamentUpdateRequest;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -28,10 +28,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = Routes.API_V1_DEPARTAMENTE_BASE)
+@RequiredArgsConstructor
 public class DepartamentController {
 
-    @Autowired
-    private DepartamentRepository repository;
+    private final DepartamentRepository repository;
 
     @GetMapping(value = "")
     Page<Departament> index() {

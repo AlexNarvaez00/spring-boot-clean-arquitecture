@@ -1,0 +1,12 @@
+GET http://localhost:8080/api/v1/syllabus
+
+###
+
+POST http://localhost:8080/api/v1/syllabus
+content-type: application/json
+
+{
+    "code": "AQWSDE",
+    "start_date": "2020-01-22",
+    "end_date":"2020-01-22"
+}

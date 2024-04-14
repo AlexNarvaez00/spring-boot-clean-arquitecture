@@ -1,5 +1,6 @@
 package mx.edu.itoaxaca.api.v1.career.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -9,20 +10,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
+import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.UUID;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 
 @Entity
 @Table(name = "careers")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Career {
 
@@ -38,4 +33,10 @@ public class Career {
     @JoinColumn(name = "departament_id")
     @JsonIgnore
     private Departament departament;
+
+    public Career(UUID id, CareerName name, Departament departament) {
+        this.id = id;
+        this.name = name;
+        this.departament = departament;
+    }
 }
