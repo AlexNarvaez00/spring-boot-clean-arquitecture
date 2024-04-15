@@ -1,12 +1,18 @@
 package mx.edu.itoaxaca.api.v1.career.domain;
 
-import mx.edu.itoaxaca.api.v1.shared.domain.ValueObject.StringValueObject;
-import mx.edu.itoaxaca.api.v1.shared.domain.ValueObject.StringValueObjectConverter;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
 
-public class CareerNameConverter extends StringValueObjectConverter {
+@Converter
+public class CareerNameConverter implements AttributeConverter<CareerName, String> {
 
     @Override
-    public StringValueObject getInstance(String data) {
-        return new CareerName(data);
+    public String convertToDatabaseColumn(CareerName arg0) {
+        return arg0 == null ? null : arg0.getValue().toString();
+    }
+
+    @Override
+    public CareerName convertToEntityAttribute(String arg0) {
+        return arg0 == null ? null : new CareerName(arg0);
     }
 }

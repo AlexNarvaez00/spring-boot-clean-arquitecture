@@ -8,9 +8,7 @@ import lombok.Data;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 
 @Data
-public class SyllabusStoreRequest {
-
-    private UUID id;
+public class SyllabusUpdateRequest {
 
     @NotEmpty
     private String code;
@@ -26,7 +24,7 @@ public class SyllabusStoreRequest {
 
     public Syllabus asSyllabus() {
         return new Syllabus(
-            id != null ? id : UUID.randomUUID(),
+            null,
             new SyllabusCode(this.code),
             new SyllabusStartDate(this.start_date),
             new SyllabusEndDate(this.end_date),

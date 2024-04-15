@@ -10,8 +10,8 @@ POST http://localhost:8080/api/v1/career
 content-type: application/json
 
 {
-    "name": "Carrera {{$guid}}",
-    "departament_id":"35240eb9-4923-45fe-a0c9-5494b14b760e"
+    "name": "Carrera {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "departament_id":"92c462ba-59f8-47d3-b386-338f7978de0b"
 }
 
 ###

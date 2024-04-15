@@ -1,13 +1,17 @@
 package mx.edu.itoaxaca.api.v1.syllabus.domain;
 
+import jakarta.persistence.AttributeConverter;
 import java.time.LocalDate;
-import mx.edu.itoaxaca.api.v1.shared.domain.ValueObject.DateValueObject;
-import mx.edu.itoaxaca.api.v1.shared.domain.ValueObject.DateValueObjectConverter;
 
-public class SyllabusStartDateCoverter extends DateValueObjectConverter {
+public class SyllabusStartDateCoverter implements AttributeConverter<SyllabusStartDate, LocalDate> {
 
     @Override
-    public DateValueObject getInstance(LocalDate data) {
-        return new SyllabusStartDate(data);
+    public LocalDate convertToDatabaseColumn(SyllabusStartDate arg0) {
+        return (arg0 == null) ? null : arg0.getValue();
+    }
+
+    @Override
+    public SyllabusStartDate convertToEntityAttribute(LocalDate arg0) {
+        return (arg0 == null) ? null : new SyllabusStartDate(arg0);
     }
 }
