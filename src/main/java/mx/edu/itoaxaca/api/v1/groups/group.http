@@ -1,0 +1,27 @@
+GET http://localhost:8080/api/v1/group
+
+###
+GET http://localhost:8080/api/v1/group/70898ba0-1486-4c99-9ab8-e74d56a5a858
+
+
+###
+POST http://localhost:8080/api/v1/group
+content-type: application/json
+
+{
+    "code": "code {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "name": "name {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
+
+###
+PUT http://localhost:8080/api/v1/group/70898ba0-1486-4c99-9ab8-e74d56a5a858
+content-type: application/json
+
+{
+    "code": "code {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "name": "name {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
+
+###
+DELETE http://localhost:8080/api/v1/group/ec67624d-43c4-48fd-acd5-156b4bf1372b
+

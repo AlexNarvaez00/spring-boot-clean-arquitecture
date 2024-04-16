@@ -12,4 +12,6 @@ public class Routes {
     public static final String API_V1_CAREER_DELETE = "/{id}";
     
     public static final String API_V1_SYLLABUS_BASE = "/api/v1/syllabus";
+
+    public static final String API_V1_GROUP_BASE = "/api/v1/group";
 }
