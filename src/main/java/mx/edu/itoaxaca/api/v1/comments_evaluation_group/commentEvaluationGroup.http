@@ -1,0 +1,29 @@
+GET http://localhost:8080/api/v1/comment-evaluation-group
+
+###
+
+GET http://localhost:8080/api/v1/comment-evaluation-group/6526d045-0bae-4e4a-afe7-331dc9d7ba0e
+
+###
+
+POST http://localhost:8080/api/v1/comment-evaluation-group
+content-type: application/json
+
+{
+    "comment": "comment {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "group_id": "0da922e5-b44e-4ff8-87b8-cd26bde99361"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/comment-evaluation-group/6526d045-0bae-4e4a-afe7-331dc9d7ba0e
+content-type: application/json
+
+{
+    "comment": "comment {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "group_id": "0da922e5-b44e-4ff8-87b8-cd26bde99361"
+}
+
+###
+
+DELETE  http://localhost:8080/api/v1/comment-evaluation-group/6526d045-0bae-4e4a-afe7-331dc9d7ba0e

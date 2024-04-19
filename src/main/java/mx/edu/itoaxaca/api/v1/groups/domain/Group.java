@@ -6,14 +6,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 import java.util.UUID;
-
-import org.springframework.data.annotation.CreatedDate;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.comments_evaluation_group.domain.CommentEvaluationGroup;
+import org.springframework.data.annotation.CreatedDate;
 
 @Data
 @Entity
@@ -38,4 +39,14 @@ public class Group {
     @Convert(converter = GroupCreatedAtConverter.class)
     @CreatedDate
     private GroupCreatedAt createdAt;
+
+    @OneToMany(mappedBy = "group")
+    private List<CommentEvaluationGroup> comments;
+
+    public Group(UUID id, GroupName name, GroupCode code, GroupCreatedAt createdAt) {
+        this.id = id;
+        this.name = name;
+        this.code = code;
+        this.createdAt = createdAt;
+    }
 }
