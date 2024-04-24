@@ -1,0 +1,41 @@
+GET http://localhost:8080/api/v1/workshop
+
+###
+
+GET http://localhost:8080/api/v1/workshop/3012cfb3-9997-4823-bab7-fce5367c23e0
+
+###
+
+POST http://localhost:8080/api/v1/workshop
+content-type: application/json
+
+{
+    "name": "name-{{$randomInt 100 1000}}",
+    "date": "2020-01-22",
+    "speaker":"speaker-{{$randomInt 100 1000}}",
+    "speaker_institution" : "speaker_institution-{{$randomInt 100 1000}}",
+    "career_ids":[
+        "bbd15c2c-18c6-4d41-bd41-b2eb89e6e6da",
+        "ed985651-f3b7-490d-a224-1d3c7271d7c4",
+        "842f90c0-07b0-4091-9c15-fbd65c65e7f4",
+        "9d4b30af-5b65-410b-b7f7-df9a7efc306a"
+    ]
+}
+
+###
+
+PUT http://localhost:8080/api/v1/workshop/ab3b72f4-1e2d-44a1-9f68-2a19b1005f65
+content-type: application/json
+
+{
+    "name": "name-{{$randomInt 100 1000}}",
+    "date": "2020-01-22",
+    "speaker":"speaker-{{$randomInt 100 1000}}",
+    "speaker_institution" : "speaker_institution-{{$randomInt 100 1000}}",
+    "career_ids":[
+        "842f90c0-07b0-4091-9c15-fbd65c65e7f4"
+    ]
+}
+
+###
+DELETE  http://localhost:8080/api/v1/workshop/3012cfb3-9997-4823-bab7-fce5367c23e0

@@ -8,12 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.util.List;
 import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
+import mx.edu.itoaxaca.api.v1.workshop.domain.Workshop;
 
 @Entity
 @Table(name = "careers")
@@ -33,6 +37,15 @@ public class Career {
     @JoinColumn(name = "departament_id")
     @JsonIgnore
     private Departament departament;
+
+    @ManyToMany
+    @JsonIgnore
+    @JoinTable(
+        name = "career_workshops",
+        joinColumns = { @JoinColumn(name = "career_id") },
+        inverseJoinColumns = { @JoinColumn(name = "workshop_id") }
+    )
+    private List<Workshop> workshops;
 
     public Career(UUID id, CareerName name, Departament departament) {
         this.id = id;

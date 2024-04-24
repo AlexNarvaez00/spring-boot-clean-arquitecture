@@ -17,4 +17,6 @@ public class Routes {
 
     public static final String API_V1_COMMENT_EVALUATION_GROUP_BASE =
         "/api/v1/comment-evaluation-group";
+
+    public static final String API_V1_WORKSHOP_BASE = "/api/v1/workshop"; 
 }
