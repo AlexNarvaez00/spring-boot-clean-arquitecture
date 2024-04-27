@@ -1,0 +1,13 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.domain;
+
+import java.util.UUID;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+public interface {{Name}}Repository {
+    {{Name}} save({{Name}} arg);
+    Page<{{Name}}> findAll(Pageable pageable);
+    void deleteById(UUID id);
+    {{Name}} find{{Name}}ById(UUID id);
+}

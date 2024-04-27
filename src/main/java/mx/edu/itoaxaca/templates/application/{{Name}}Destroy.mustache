@@ -1,0 +1,10 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.application;
+
+import java.util.UUID;
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Repository;
+
+public class {{Name}}Destroy {
+    public static void run({{Name}}Repository repo, UUID id) {
+        repo.deleteById(id);
+    }
+}

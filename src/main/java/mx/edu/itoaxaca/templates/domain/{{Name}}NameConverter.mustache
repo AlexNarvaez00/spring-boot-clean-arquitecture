@@ -1,0 +1,17 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.domain;
+
+import jakarta.persistence.AttributeConverter;
+
+public class {{Name}}NameConverter 
+    implements AttributeConverter<{{Name}}Name, String> {
+
+    @Override
+    public String convertToDatabaseColumn({{Name}}Name attribute) {
+        return (attribute == null) ? null : attribute.getValue();
+    }
+
+    @Override
+    public {{Name}}Name convertToEntityAttribute(String dbData) {
+        return (dbData == null) ? null : new {{Name}}Name(dbData);
+    }
+}

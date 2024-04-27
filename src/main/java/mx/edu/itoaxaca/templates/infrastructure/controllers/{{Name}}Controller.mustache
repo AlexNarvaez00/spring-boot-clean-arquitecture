@@ -1,0 +1,63 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.infrastructure.controllers;
+
+import jakarta.validation.Valid;
+import java.util.UUID;
+import lombok.RequiredArgsConstructor;
+import mx.edu.itoaxaca.Routes;
+import mx.edu.itoaxaca.api.v1.{{name}}.application.{{Name}}Create;
+import mx.edu.itoaxaca.api.v1.{{name}}.application.{{Name}}Destroy;
+import mx.edu.itoaxaca.api.v1.{{name}}.application.{{Name}}GetAll;
+import mx.edu.itoaxaca.api.v1.{{name}}.application.{{Name}}GetById;
+import mx.edu.itoaxaca.api.v1.{{name}}.application.{{Name}}Update;
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}};
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Repository;
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}StoreRequest;
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}UpdateRequest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping(value = Routes.)
+@RequiredArgsConstructor
+public class {{Name}}Controller {
+    private final {{Name}}Repository repo;
+
+    @GetMapping
+    Page<{{Name}}> index() {
+        return {{Name}}GetAll.run(PageRequest.of(0, 10), repo);
+    }
+
+    @GetMapping(value = "/{id}")
+    {{Name}} show(@PathVariable UUID id) {
+        return {{Name}}GetById.run(repo, id);
+    }
+
+    @PostMapping
+    {{Name}} store(@Valid @RequestBody {{Name}}StoreRequest request) {
+        return {{Name}}Create.run(repo, request.as{{Name}}());
+    }
+
+    @PutMapping(value = "/{id}")
+    {{Name}} update(
+        @PathVariable UUID id,
+        @Valid @RequestBody {{Name}}UpdateRequest request
+    ) {
+        return {{Name}}Update.run(repo, id, request.as{{Name}}());
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    void destroy(@PathVariable UUID id) {
+        {{Name}}Destroy.run(repo, id);
+    }
+}

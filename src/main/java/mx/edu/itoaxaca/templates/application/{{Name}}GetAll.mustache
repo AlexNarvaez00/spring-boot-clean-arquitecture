@@ -1,0 +1,12 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.application;
+
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}};
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Repository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
+public class {{Name}}GetAll {
+    public static Page<{{Name}}> run(Pageable pageable, {{Name}}Repository repo) {
+        return repo.findAll(pageable);
+    }
+}

@@ -1,0 +1,10 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.application;
+
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}};
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Repository;
+
+public class {{Name}}Create {
+    public static {{Name}} run({{Name}}Repository repo, {{Name}} arg) {
+        return repo.save(arg);
+    }
+}
