@@ -20,6 +20,11 @@ public class Routes {
 
     public static final String API_V1_WORKSHOP_BASE = "/api/v1/workshop"; 
     
-    public static final String API_V1_SUPPORT_AREAS_BASE = "/api/v1/support-area"; 
+    public static final String API_V1_SUPPORT_AREAS_BASE = "/api/v1/support-area";
+
     public static final String API_V1_TYPE_SUPPORT_AREAS_BASE = "/api/v1/type-support-area"; 
+    
+    public static final String API_V1_SPECIALITY_BASE = "/api/v1/speciality"; 
+    
+    public static final String API_V1_SCHEDULE_BASE = "/api/v1/schedule"; 
 }

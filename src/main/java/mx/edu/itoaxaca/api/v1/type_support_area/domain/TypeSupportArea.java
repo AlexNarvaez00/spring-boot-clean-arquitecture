@@ -24,7 +24,7 @@ public class TypeSupportArea {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "type", nullable = false)
     @Convert(converter = TypeSupportAreaTypeConverter.class)
     private TypeSupportAreaType type;
 

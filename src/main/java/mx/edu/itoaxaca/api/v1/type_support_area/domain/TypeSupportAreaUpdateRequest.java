@@ -7,12 +7,12 @@ import lombok.Data;
 public class TypeSupportAreaUpdateRequest {
     
     @NotNull
-    private String name;
+    private String type;
 
     public TypeSupportArea asTypeSupportArea() {
         return new TypeSupportArea(
             null,
-            new TypeSupportAreaType(this.name)
+            new TypeSupportAreaType(this.type)
         );
     }
 }

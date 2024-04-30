@@ -14,6 +14,7 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
+import mx.edu.itoaxaca.api.v1.speciality.domain.Speciality;
 
 @Data
 @Table(name = "syllabus")
@@ -42,6 +43,11 @@ public class Syllabus {
     @JsonIgnore
     private Career career;
 
+    @ManyToOne
+    @JoinColumn(name = "speciality_id")
+    @JsonIgnore
+    private Speciality speciality;
+
     public Syllabus(
         UUID id,
         SyllabusCode syllabusCode,
@@ -54,5 +60,21 @@ public class Syllabus {
         this.startDate = syllabusStartDate;
         this.endDate = syllabusEndDate;
         this.career = career;
+    }
+
+    public Syllabus(
+        UUID id,
+        SyllabusCode code,
+        SyllabusStartDate startDate,
+        SyllabusEndDate endDate,
+        Career career,
+        Speciality speciality
+    ) {
+        this.id = id;
+        this.code = code;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.career = career;
+        this.speciality = speciality;
     }
 }
