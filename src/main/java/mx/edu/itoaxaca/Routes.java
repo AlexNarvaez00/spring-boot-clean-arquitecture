@@ -31,4 +31,6 @@ public class Routes {
     public static final String API_V1_DATE_BASE = "/api/v1/date"; 
     
     public static final String API_V1_TYPE_DATE_BASE = "/api/v1/type-date"; 
+    
+    public static final String API_V1_ACTION_PLAN_BASE = "/api/v1/action-plan"; 
 }

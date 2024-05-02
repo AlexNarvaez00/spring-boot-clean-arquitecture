@@ -1,0 +1,23 @@
+GET http://localhost:8080/api/v1/action-plan
+
+###
+
+POST http://localhost:8080/api/v1/action-plan
+content-type: application/json
+
+{
+    "name": "AP-{{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/action-plan/00e60d98-898c-46e2-8d79-5af4ce5fdf77
+content-type: application/json
+
+{
+    "name": "AP-{{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
+
+###
+
+DELETE http://localhost:8080/api/v1/action-plan/00e60d98-898c-46e2-8d79-5af4ce5fdf77
