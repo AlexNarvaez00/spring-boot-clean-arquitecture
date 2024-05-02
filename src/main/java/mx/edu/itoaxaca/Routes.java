@@ -27,4 +27,6 @@ public class Routes {
     public static final String API_V1_SPECIALITY_BASE = "/api/v1/speciality"; 
     
     public static final String API_V1_SCHEDULE_BASE = "/api/v1/schedule"; 
+    
+    public static final String API_V1_DATE_BASE = "/api/v1/date"; 
 }

@@ -1,0 +1,27 @@
+
+GET http://localhost:8080/api/v1/date
+
+###
+
+POST http://localhost:8080/api/v1/date
+content-type: application/json
+
+{
+    "link":"https://dbdiagram.io/d/Re-interpretacion-63a8a4677d39e42284e77283",
+    "date":"2022-02-12T09:22:10.99",
+    "confirm": false
+}
+
+###
+
+PUT http://localhost:8080/api/v1/date/c9c718f1-ffcf-495c-928b-38d81e36b822
+content-type: application/json
+
+{
+    "link":"https://www.geeksforgeeks.org/java-time-localdatetime-class-in-java/",
+    "date":"2022-02-12T09:22:10.99",
+    "confirm": false
+}
+
+###
+DELETE http://localhost:8080/api/v1/date/c9c718f1-ffcf-495c-928b-38d81e36b822
