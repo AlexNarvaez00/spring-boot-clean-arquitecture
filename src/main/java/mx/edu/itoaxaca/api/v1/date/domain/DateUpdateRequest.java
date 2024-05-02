@@ -1,11 +1,12 @@
 package mx.edu.itoaxaca.api.v1.date.domain;
 
-import java.time.LocalDateTime;
-
-import org.hibernate.validator.constraints.URL;
-
 import jakarta.validation.constraints.NotNull;
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import lombok.Data;
+import mx.edu.itoaxaca.api.v1.type_date.domain.TypeDate;
+import org.hibernate.validator.constraints.URL;
 
 @Data
 public class DateUpdateRequest {
@@ -20,12 +21,16 @@ public class DateUpdateRequest {
     @NotNull
     private Boolean confirm;
 
+    @NotNull
+    private UUID type_date_id;
+
     public Date asDate() {
         return new Date(
             null,
             new DateLink(this.link),
             new DateDate(this.date),
-            new DateConfirm(this.confirm)
+            new DateConfirm(this.confirm),
+            new TypeDate(this.type_date_id, null)
         );
     }
 }
