@@ -16,7 +16,6 @@ public class CareerUpdateRequest {
     private UUID departament_id;
 
     public Career asCareer() {
-        System.out.print(this.departament_id);
         return new Career(
             null,
             new CareerName(this.name),

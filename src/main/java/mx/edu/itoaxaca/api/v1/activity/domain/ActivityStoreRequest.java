@@ -25,7 +25,7 @@ public class ActivityStoreRequest {
             (this.id == null) ? null : UUID.randomUUID(),
             new ActivityName(this.name),
             new ActionPlan(this.action_plan_id, null),
-            new ActivityInstitutionalMentoringProgram(this.action_plan_id, null)
+            new ActivityInstitutionalMentoringProgram(this.action_plan_id, null,null)
         );
     }
 }

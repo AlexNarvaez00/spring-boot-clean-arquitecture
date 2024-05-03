@@ -5,7 +5,8 @@ POST http://localhost:8080/api/v1/strategy
 content-type: application/json
 
 {
-    "name": "name startegy-{{$randomInt 100 1000}}"
+    "name": "name startegy-{{$randomInt 100 1000}}",
+    "institutional_mentoring_program_id":"c21ea292-1636-4a78-8af6-c89088bd3197"
 }
 
 ###
@@ -13,7 +14,8 @@ PUT http://localhost:8080/api/v1/strategy/c34e09f5-2531-4163-b814-b61f2e59e3ea
 content-type: application/json
 
 {
-    "name": "name startegy-{{$randomInt 100 1000}}"
+    "name": "name startegy-{{$randomInt 100 1000}}",
+    "institutional_mentoring_program_id":"c21ea292-1636-4a78-8af6-c89088bd3197"
 }
 
 ###

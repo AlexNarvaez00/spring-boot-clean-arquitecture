@@ -41,4 +41,6 @@ public class Routes {
     public static final String API_V1_STRATEGY_BASE = "/api/v1/strategy";  
     
     public static final String API_V1_INSTITUTIONAL_MENTORING_PROGRAM_BASE = "/api/v1/institutional-mentoring-program";  
+    
+    public static final String API_V1_ANNEX_BASE = "/api/v1/annex";  
 }

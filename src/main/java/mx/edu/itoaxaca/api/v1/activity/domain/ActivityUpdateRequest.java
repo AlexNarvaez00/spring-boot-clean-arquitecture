@@ -23,7 +23,7 @@ public class ActivityUpdateRequest {
             null,
             new ActivityName(this.name),
             new ActionPlan(this.action_plan_id, null),
-            new ActivityInstitutionalMentoringProgram(this.action_plan_id, null)
+            new ActivityInstitutionalMentoringProgram(this.action_plan_id, null, null)
         );
     }
 }

@@ -18,7 +18,6 @@ public class CareerStoreRequest {
     private UUID departament_id;
 
     public Career asCareer() {
-        System.out.print(this.departament_id);
         return new Career(
             (id == null) ? UUID.randomUUID() : id,
             new CareerName(this.name),

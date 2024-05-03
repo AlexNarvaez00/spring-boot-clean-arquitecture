@@ -6,7 +6,8 @@ POST http://localhost:8080/api/v1/activity-institutional-mentoring-program
 content-type: application/json
 
 {
-    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "straegy_id": "b2562db2-18bc-4ee3-a9b9-7bceb81151f4"
 }
 
 ###
@@ -15,5 +16,6 @@ PUT http://localhost:8080/api/v1/activity-institutional-mentoring-program/78edcb
 content-type: application/json
 
 {
-    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "straegy_id": "b2562db2-18bc-4ee3-a9b9-7bceb81151f4"
 }

@@ -1,0 +1,10 @@
+GET http://localhost:8080/api/v1/annex
+
+###
+POST http://localhost:8080/api/v1/annex
+content-type: application/json
+
+{
+    "name": "activity {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "body": {"nombre": "Juan2"}
+}

@@ -44,7 +44,6 @@ public class SyllabusController {
 
     @PostMapping
     Syllabus store(@RequestBody SyllabusStoreRequest request) {
-        System.out.println(request.asSyllabus());
         return SyllabusCreate.run(repo, request.asSyllabus());
     }
 
