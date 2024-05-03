@@ -33,4 +33,12 @@ public class Routes {
     public static final String API_V1_TYPE_DATE_BASE = "/api/v1/type-date"; 
     
     public static final String API_V1_ACTION_PLAN_BASE = "/api/v1/action-plan"; 
+    
+    public static final String API_V1_ACTIVITY_BASE = "/api/v1/activity"; 
+    
+    public static final String API_V1_ACTIVITY_INSTITUTIONAL_MENTORING_PROGRAM_BASE = "/api/v1/activity-institutional-mentoring-program"; 
+    
+    public static final String API_V1_STRATEGY_BASE = "/api/v1/strategy";  
+    
+    public static final String API_V1_INSTITUTIONAL_MENTORING_PROGRAM_BASE = "/api/v1/institutional-mentoring-program";  
 }

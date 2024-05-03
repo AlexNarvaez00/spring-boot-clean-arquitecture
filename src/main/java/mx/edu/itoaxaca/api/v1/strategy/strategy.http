@@ -1,0 +1,20 @@
+GET http://localhost:8080/api/v1/strategy
+
+###
+POST http://localhost:8080/api/v1/strategy
+content-type: application/json
+
+{
+    "name": "name startegy-{{$randomInt 100 1000}}"
+}
+
+###
+PUT http://localhost:8080/api/v1/strategy/c34e09f5-2531-4163-b814-b61f2e59e3ea
+content-type: application/json
+
+{
+    "name": "name startegy-{{$randomInt 100 1000}}"
+}
+
+###
+DELETE http://localhost:8080/api/v1/strategy/ddf99fbd-db04-4683-a061-a202ee4e03c6

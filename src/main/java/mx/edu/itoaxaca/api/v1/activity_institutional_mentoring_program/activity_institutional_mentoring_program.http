@@ -1,0 +1,19 @@
+GET http://localhost:8080/api/v1/activity-institutional-mentoring-program
+
+###
+
+POST http://localhost:8080/api/v1/activity-institutional-mentoring-program
+content-type: application/json
+
+{
+    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
+
+###
+
+PUT http://localhost:8080/api/v1/activity-institutional-mentoring-program/78edcb30-bdb7-481e-aed2-60a489e62f75
+content-type: application/json
+
+{
+    "name": "activity-imp {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+}
