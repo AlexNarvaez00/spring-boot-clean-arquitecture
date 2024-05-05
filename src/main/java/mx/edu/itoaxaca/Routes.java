@@ -45,4 +45,6 @@ public class Routes {
     public static final String API_V1_ANNEX_BASE = "/api/v1/annex";  
     
     public static final String API_V1_PERIOD_BASE = "/api/v1/period";  
+    
+    public static final String API_V1_FOLLOW_UP_BASE = "/api/v1/follow-up";  
 }
