@@ -43,4 +43,6 @@ public class Routes {
     public static final String API_V1_INSTITUTIONAL_MENTORING_PROGRAM_BASE = "/api/v1/institutional-mentoring-program";  
     
     public static final String API_V1_ANNEX_BASE = "/api/v1/annex";  
+    
+    public static final String API_V1_PERIOD_BASE = "/api/v1/period";  
 }
