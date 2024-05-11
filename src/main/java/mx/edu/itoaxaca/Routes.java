@@ -57,4 +57,6 @@ public class Routes {
     public static final String API_V1_SUPPORT_STAFF_BASE = "/api/v1/support-staff";
     
     public static final String API_V1_STUDENT_BASE = "/api/v1/student";
+    
+    public static final String API_V1_TEACHER_BASE = "/api/v1/teacher";
 }

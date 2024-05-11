@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.institutional_coordinator.domain.InstitutionalCoordinator;
 import mx.edu.itoaxaca.api.v1.student.domain.Student;
 import mx.edu.itoaxaca.api.v1.support_staff.domain.SupportStaff;
+import mx.edu.itoaxaca.api.v1.teacher.domain.Teacher;
 import mx.edu.itoaxaca.api.v1.tutor.domain.Tutor;
 
 @Data
@@ -65,6 +66,10 @@ public class Profile {
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private Student student;
+    
+    @OneToOne(mappedBy = "profile")
+    @JsonIgnore
+    private Teacher teacher;
     
     public Profile(
         UUID id,
