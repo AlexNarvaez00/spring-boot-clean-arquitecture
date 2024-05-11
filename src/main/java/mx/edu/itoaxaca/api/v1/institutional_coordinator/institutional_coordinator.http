@@ -1,0 +1,12 @@
+
+GET http://localhost:8080/api/v1/institucional-coordinator
+
+###
+
+POST http://localhost:8080/api/v1/institucional-coordinator
+content-type: application/json
+
+{
+    "degree": "name-{{$randomInt 100 1000}}",
+    "profile_id": "6daa0077-e668-4b6f-9a67-22f9b0fe83b2"
+}

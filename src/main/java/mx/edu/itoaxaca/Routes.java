@@ -47,4 +47,14 @@ public class Routes {
     public static final String API_V1_PERIOD_BASE = "/api/v1/period";  
     
     public static final String API_V1_FOLLOW_UP_BASE = "/api/v1/follow-up";  
+    
+    public static final String API_V1_PROFILE_BASE = "/api/v1/profile";  
+    
+    public static final String API_V1_INSTITUCIONAL_COORDINATOR_BASE = "/api/v1/institucional-coordinator";
+    
+    public static final String API_V1_TUTOR_BASE = "/api/v1/tutor";
+    
+    public static final String API_V1_SUPPORT_STAFF_BASE = "/api/v1/support-staff";
+    
+    public static final String API_V1_STUDENT_BASE = "/api/v1/student";
 }

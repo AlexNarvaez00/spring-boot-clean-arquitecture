@@ -1,0 +1,22 @@
+
+GET http://localhost:8080/api/v1/tutor
+
+####
+
+POST http://localhost:8080/api/v1/tutor
+content-type: application/json
+
+{
+    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419",
+    "classification": "hola"
+}
+
+####
+
+PUT http://localhost:8080/api/v1/tutor/9a6ca8d1-59a9-4fba-bb46-7e68f581a331
+content-type: application/json
+
+{
+    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419",
+    "classification": "hola{{$randomInt 100 1000}}"
+}

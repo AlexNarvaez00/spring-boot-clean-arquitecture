@@ -1,0 +1,11 @@
+
+GET http://localhost:8080/api/v1/support-staff
+
+###
+POST http://localhost:8080/api/v1/support-staff
+content-type: application/json
+
+{
+    "job_title": "hola",
+    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419"
+}
