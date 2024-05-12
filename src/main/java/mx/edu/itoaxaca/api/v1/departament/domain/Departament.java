@@ -15,8 +15,8 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
+import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacher;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
-import mx.edu.itoaxaca.api.v1.teacher.domain.Teacher;
 
 @Entity
 @Table(name = "departaments")
@@ -44,7 +44,7 @@ public class Departament {
     private List<Career> careers;
 
     @OneToMany(mappedBy = "departament")
-    private List<Teacher> teachers;
+    private List<DepartamentTeacher> teachers;
 
     public Departament(UUID id, DepartamentName name) {
         this.id = id;

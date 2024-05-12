@@ -4,6 +4,8 @@ import jakarta.validation.Valid;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import mx.edu.itoaxaca.Routes;
+import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacherRepository;
+import mx.edu.itoaxaca.api.v1.teacher.application.TeacherAttachedToDepartament;
 import mx.edu.itoaxaca.api.v1.teacher.application.TeacherCreate;
 import mx.edu.itoaxaca.api.v1.teacher.application.TeacherDestroy;
 import mx.edu.itoaxaca.api.v1.teacher.application.TeacherGetAll;
@@ -30,7 +32,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = Routes.API_V1_TEACHER_BASE)
 @RequiredArgsConstructor
 public class TeacherController {
+
     private final TeacherRepository repo;
+    private final DepartamentTeacherRepository repoDepartamentTeacher;
 
     @GetMapping
     Page<Teacher> index() {
@@ -44,7 +48,13 @@ public class TeacherController {
 
     @PostMapping
     Teacher store(@Valid @RequestBody TeacherStoreRequest request) {
-        return TeacherCreate.run(repo, request.asTeacher());
+        var teacher = TeacherCreate.run(repo, request.asTeacher());
+        TeacherAttachedToDepartament.run(
+            repoDepartamentTeacher,
+            teacher,
+            request.getDepartament()
+        );
+        return teacher;
     }
 
     @PutMapping(value = "/{id}")

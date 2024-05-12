@@ -7,5 +7,6 @@ content-type: application/json
 
 {
     "type": "type-{{$randomInt 10 100}}",
-    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419"
+    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419",
+    "departament_id":""
 }

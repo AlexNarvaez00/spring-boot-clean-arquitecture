@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
+import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacher;
 import mx.edu.itoaxaca.api.v1.departamental_coordinator.domain.DepartamentalCoordinator;
 import mx.edu.itoaxaca.api.v1.institutional_coordinator.domain.InstitutionalCoordinator;
 import mx.edu.itoaxaca.api.v1.student.domain.Student;
@@ -80,6 +81,10 @@ public class Profile {
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private DepartamentalCoordinator departamentalCoordinator;
+
+    @OneToOne(mappedBy = "teacher")
+    @JsonIgnore
+    private DepartamentTeacher departamentTeacher;
     
     public Profile(
         UUID id,
