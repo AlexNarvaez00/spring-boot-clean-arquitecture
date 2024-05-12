@@ -7,5 +7,6 @@ content-type: application/json
 
 {
     "job_title": "hola",
-    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419"
+    "profile_id": "b6a0fa99-723f-4d0a-8f84-828ce9c0c419",
+    "support_area_id":"df843303-63f5-4e8e-8a0f-9f2d16857f81"
 }
