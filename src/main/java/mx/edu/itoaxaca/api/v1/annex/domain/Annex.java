@@ -6,11 +6,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.activity.domain.Activity;
 
 @Data
 @Entity
@@ -28,6 +34,10 @@ public class Annex {
     @Column(name = "body", nullable = false)
     @Convert(converter = AnnexBodyConverter.class)
     private AnnexBody body;
+
+    @OneToMany(mappedBy = "annex")
+    @JsonIgnore
+    private List<Activity> activities;
 
     public Annex(UUID id, AnnexName name, AnnexBody body) {
         this.id = id;

@@ -15,6 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.action_plan.domain.ActionPlan;
 import mx.edu.itoaxaca.api.v1.activity_institutional_mentoring_program.domain.ActivityInstitutionalMentoringProgram;
+import mx.edu.itoaxaca.api.v1.annex.domain.Annex;
 
 @Data
 @Entity
@@ -40,22 +41,23 @@ public class Activity {
     @JsonIgnore
     private ActivityInstitutionalMentoringProgram activityInstitutionalMentoringProgram;
 
-    public Activity(UUID id, ActivityName name, ActionPlan actionPlan) {
-        this.id = id;
-        this.name = name;
-        this.actionPlan = actionPlan;
-    }
+    @ManyToOne
+    @JoinColumn(name = "annex_id")
+    @JsonIgnore
+    private Annex annex;
 
     public Activity(
         UUID id,
         ActivityName name,
         ActionPlan actionPlan,
-        ActivityInstitutionalMentoringProgram activityInstitutionalMentoringProgram
+        ActivityInstitutionalMentoringProgram activityInstitutionalMentoringProgram,
+        Annex annex
     ) {
         this.id = id;
         this.name = name;
         this.actionPlan = actionPlan;
         this.activityInstitutionalMentoringProgram =
             activityInstitutionalMentoringProgram;
+        this.annex = annex;
     }
 }

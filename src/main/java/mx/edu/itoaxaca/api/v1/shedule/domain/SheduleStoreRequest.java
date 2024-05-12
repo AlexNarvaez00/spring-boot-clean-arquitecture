@@ -1,10 +1,11 @@
 package mx.edu.itoaxaca.api.v1.shedule.domain;
 
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-
 import java.util.UUID;
 import lombok.Data;
+import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
 
 @Data
 public class SheduleStoreRequest {
@@ -20,12 +21,16 @@ public class SheduleStoreRequest {
     @PositiveOrZero
     private Integer day;
 
+    @NotNull
+    private UUID personal_id;
+
     public Shedule asShedule() {
         return new Shedule(
             (this.id == null) ? null : UUID.randomUUID(),
             new SheduleStartHour(start_hour),
             new SheduleEndHour(end_hour),
-            new SheduleDay(day)
+            new SheduleDay(day),
+            new Profile(this.personal_id, null, null, null, null, null)
         );
     }
 }

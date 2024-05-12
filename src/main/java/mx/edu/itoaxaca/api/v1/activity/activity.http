@@ -7,7 +7,8 @@ content-type: application/json
 
 {
     "action_plan_id":"14327a50-73e3-4740-8613-376dba35542e",
-    "name": "activity {{$randomInt 100 1000}}-{{$randomInt 100 1000}}"
+    "name": "activity {{$randomInt 100 1000}}-{{$randomInt 100 1000}}",
+    "annex_id": ""
 }
 
 ###

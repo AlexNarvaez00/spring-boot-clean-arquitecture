@@ -6,10 +6,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+
+import java.util.List;
 import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.channeling_follow_up.domain.ChannellingFollowUp;
 
 @Data
 @Entity
@@ -31,7 +38,11 @@ public class FollowUp {
     @Column(name = "callOn", nullable = false)
     @Convert(converter = FollowUpCallOnConverter.class)
     private FollowUpCallOn callOn;
-
+    
+    @OneToMany(mappedBy = "followUp")
+    @JsonIgnore
+    private List<ChannellingFollowUp> channellingFollowUps;
+    
     public FollowUp(UUID id, FollowUpComment comment, FollowUpConfirm confirm, FollowUpCallOn callOn) {
         this.id = id;
         this.comment = comment;
