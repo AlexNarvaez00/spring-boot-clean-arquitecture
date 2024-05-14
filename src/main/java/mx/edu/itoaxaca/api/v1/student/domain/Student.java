@@ -9,16 +9,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+
 import java.util.UUID;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "students")
 @NoArgsConstructor
-public class Student {
+public class Student extends WithTimestamps{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -26,7 +29,7 @@ public class Student {
     @Column(name = "control_number", nullable = false)
     @Convert(converter = StudentControlNumberConverter.class)
     private StudentControlNumber controlNumber;
-    
+
     @OneToOne
     @JoinColumn(name = "profile_id", referencedColumnName = "id", nullable = false)
     private Profile profile;

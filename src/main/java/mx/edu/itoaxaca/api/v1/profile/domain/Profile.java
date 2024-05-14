@@ -19,6 +19,7 @@ import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacher;
 import mx.edu.itoaxaca.api.v1.departamental_coordinator.domain.DepartamentalCoordinator;
 import mx.edu.itoaxaca.api.v1.institutional_coordinator.domain.InstitutionalCoordinator;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.student.domain.Student;
 import mx.edu.itoaxaca.api.v1.support_staff.domain.SupportStaff;
 import mx.edu.itoaxaca.api.v1.teacher.domain.Teacher;
@@ -28,7 +29,7 @@ import mx.edu.itoaxaca.api.v1.tutor.domain.Tutor;
 @Entity
 @Table(name = "profiles")
 @NoArgsConstructor
-public class Profile {
+public class Profile extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -45,10 +46,6 @@ public class Profile {
     @Column(name = "password", nullable = false)
     @Convert(converter = ProfilePasswordConverter.class)
     private ProfilePassword password;
-
-    @Column(name = "created_at", nullable = false)
-    @Convert(converter = ProfileCreatedAtConverter.class)
-    private ProfileCreatedAt createdAt;
 
     @Column(name = "last_session", nullable = true)
     @Convert(converter = ProfileLastSessionConverter.class)
@@ -91,14 +88,12 @@ public class Profile {
         ProfileName name,
         ProfileEmail email,
         ProfilePassword password,
-        ProfileCreatedAt createdAt,
         ProfileLastSession lastSession
     ) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.createdAt = createdAt;
         this.lastSession = lastSession;
     }
 }

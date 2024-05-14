@@ -1,12 +1,35 @@
-
-GET http://localhost:8080/api/v1/period
+###
+@baseURL = http://localhost:8080 
 
 ###
 
-POST http://localhost:8080/api/v1/period
+GET {{baseURL}}/api/v1/period
+
+###
+
+POST {{baseURL}}/api/v1/period
 content-type: application/json
 
 {
-    "start_date": "2022-02-12",
-    "end_date": "2022-02-12"
+    "start_date": "2020-01-0{{$randomInt 1 9}}",
+    "end_date": "202{{$randomInt 1 3}}-01-{{$randomInt 10 12}}",
+    "current": false
 }
+
+###
+
+PUT {{baseURL}}/api/v1/period/49e08705-6a47-4593-9327-a379d3482933
+content-type: application/json
+
+{
+    "start_date": "2020-01-0{{$randomInt 1 9}}",
+    "end_date": "202{{$randomInt 1 3}}-01-{{$randomInt 10 12}}"
+}
+
+###
+
+GET  {{baseURL}}/api/v1/period/49e08705-6a47-4593-9327-a379d3482933
+
+###
+
+DELETE  {{baseURL}}/api/v1/period/9a141f32-2354-4e4c-ad6c-b92dbe64d8f4

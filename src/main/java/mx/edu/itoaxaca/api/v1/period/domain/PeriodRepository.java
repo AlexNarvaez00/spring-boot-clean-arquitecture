@@ -10,4 +10,5 @@ public interface PeriodRepository {
     Page<Period> findAll(Pageable pageable);
     void deleteById(UUID id);
     Period findPeriodById(UUID id);
+    Page<Period> findByDeletedAtIsNull(Pageable pageable);
 }

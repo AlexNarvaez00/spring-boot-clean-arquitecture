@@ -14,13 +14,14 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.support_area.domain.SupportArea;
 
 @Data
 @Entity
 @Table(name = "support_staffs")
 @NoArgsConstructor
-public class SupportStaff {
+public class SupportStaff extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

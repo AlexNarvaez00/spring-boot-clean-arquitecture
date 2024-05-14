@@ -8,14 +8,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.UUID;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "periods")
 @NoArgsConstructor
-public class Period {
+public class Period extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -29,9 +31,19 @@ public class Period {
     @Convert(converter = PeriodEndDateConverter.class)
     private PeriodEndDate endDate;
 
-    public Period(UUID id, PeriodStartDate startDate, PeriodEndDate endDate) {
+    @Column(name = "current", nullable = false)
+    @Convert(converter = PeriodCurrentConverter.class)
+    private PeriodCurrent current;
+
+    public Period(
+        UUID id,
+        PeriodStartDate startDate,
+        PeriodEndDate endDate,
+        PeriodCurrent current
+    ) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.current = current;
     }
 }

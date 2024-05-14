@@ -28,7 +28,7 @@ public class TeacherStoreRequest {
         return new Teacher(
             (this.id == null) ? null : UUID.randomUUID(),
             new TeacherType(this.type),
-            new Profile(this.profile_id, null, null, null, null, null)
+            new Profile(this.profile_id, null, null, null, null)
         );
     }
 }

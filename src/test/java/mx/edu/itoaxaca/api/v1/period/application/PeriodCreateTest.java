@@ -13,7 +13,7 @@ public class PeriodCreateTest {
 
     @Test
     void testRun() {
-        Period period = PeriodMother.random();
+        Period period = PeriodMother.random(true);
         
         var repo = PeriodRepositoryMock.mock;
         Mockito.when(repo.save(period)).thenReturn(period);

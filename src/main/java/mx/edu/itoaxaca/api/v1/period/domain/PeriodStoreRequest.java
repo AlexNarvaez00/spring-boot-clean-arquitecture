@@ -16,11 +16,15 @@ public class PeriodStoreRequest {
     @NotNull
     private LocalDate end_date;
 
+    @NotNull
+    private Boolean current;
+
     public Period asPeriod() {
         return new Period(
             (this.id == null) ? null : UUID.randomUUID(),
             new PeriodStartDate(start_date),
-            new PeriodEndDate(end_date)
+            new PeriodEndDate(end_date),
+            new PeriodCurrent(current)
         );
     }
 }

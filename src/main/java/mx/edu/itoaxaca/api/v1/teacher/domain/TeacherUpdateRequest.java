@@ -19,7 +19,7 @@ public class TeacherUpdateRequest {
         return new Teacher(
             null,
             new TeacherType(this.type),
-            new Profile(this.profile_id, null, null, null, null, null)
+            new Profile(this.profile_id, null, null, null, null)
         );
     }
 }

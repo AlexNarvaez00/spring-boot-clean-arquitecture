@@ -17,12 +17,13 @@ import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacher;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Entity
 @Table(name = "departaments")
 @Data
 @NoArgsConstructor
-public class Departament {
+public class Departament extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

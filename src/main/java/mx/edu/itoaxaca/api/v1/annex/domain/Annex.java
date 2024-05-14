@@ -17,12 +17,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.activity.domain.Activity;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "annexs")
 @NoArgsConstructor
-public class Annex {
+public class Annex extends WithTimestamps{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

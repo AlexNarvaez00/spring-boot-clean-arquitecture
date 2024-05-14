@@ -20,7 +20,7 @@ public class StudentStoreRequest {
         return new Student(
             (this.id == null) ? null : UUID.randomUUID(),
             new StudentControlNumber(this.control_number),
-            new Profile(profile_id, null, null, null, null, null)
+            new Profile(profile_id, null, null, null, null)
         );
     }
 }

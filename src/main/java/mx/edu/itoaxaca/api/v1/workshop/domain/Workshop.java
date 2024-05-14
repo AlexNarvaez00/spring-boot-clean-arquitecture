@@ -12,15 +12,17 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 import java.util.UUID;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "workshops")
 @NoArgsConstructor
-public class Workshop {
+public class Workshop extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

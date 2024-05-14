@@ -22,7 +22,6 @@ public class CommentEvaluationGroupUpdateRequest {
         return new CommentEvaluationGroup(
             null,
             new CommentEvaluationGroupComment(this.comment),
-            new CommentEvaluationGroupCreatedAt(LocalDate.now()),
             new Group(this.group_id, null, null, null)
         );
     }

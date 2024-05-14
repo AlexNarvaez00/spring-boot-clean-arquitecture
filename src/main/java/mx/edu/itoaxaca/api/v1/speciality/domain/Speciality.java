@@ -10,12 +10,13 @@ import jakarta.persistence.Table;
 import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "specialities")
 @NoArgsConstructor
-public class Speciality {
+public class Speciality extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

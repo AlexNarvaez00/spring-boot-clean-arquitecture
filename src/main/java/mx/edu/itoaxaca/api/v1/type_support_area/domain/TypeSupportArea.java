@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.support_area.domain.SupportArea;
 
 @Data
 @Entity
 @Table(name = "type_support_areas")
 @NoArgsConstructor
-public class TypeSupportArea {
+public class TypeSupportArea extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

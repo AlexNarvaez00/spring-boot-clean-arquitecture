@@ -29,7 +29,7 @@ public class SheduleUpdateRequest {
             new SheduleStartHour(start_hour),
             new SheduleEndHour(end_hour),
             new SheduleDay(day),
-            new Profile(this.personal_id, null, null, null, null, null)
+            new Profile(this.personal_id, null, null, null, null)
         );
     }
 }

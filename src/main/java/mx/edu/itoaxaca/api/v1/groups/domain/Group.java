@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.comments_evaluation_group.domain.CommentEvaluationGroup;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
+
 import org.springframework.data.annotation.CreatedDate;
 
 @Data
@@ -21,7 +23,7 @@ import org.springframework.data.annotation.CreatedDate;
 @Table(name = "groups")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Group {
+public class Group extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -35,18 +37,12 @@ public class Group {
     @Convert(converter = GroupCodeConverter.class)
     private GroupCode code;
 
-    @Column(name = "created_at", nullable = false)
-    @Convert(converter = GroupCreatedAtConverter.class)
-    @CreatedDate
-    private GroupCreatedAt createdAt;
-
     @OneToMany(mappedBy = "group")
     private List<CommentEvaluationGroup> comments;
 
-    public Group(UUID id, GroupName name, GroupCode code, GroupCreatedAt createdAt) {
+    public Group(UUID id, GroupName name, GroupCode code) {
         this.id = id;
         this.name = name;
         this.code = code;
-        this.createdAt = createdAt;
     }
 }

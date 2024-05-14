@@ -14,11 +14,15 @@ public class PeriodUpdateRequest {
     @NotNull
     private LocalDate end_date;
 
+    @NotNull
+    private Boolean current;
+
     public Period asPeriod() {
         return new Period(
             null,
             new PeriodStartDate(start_date),
-            new PeriodEndDate(end_date)
+            new PeriodEndDate(end_date),
+            new PeriodCurrent(current)
         );
     }
 }

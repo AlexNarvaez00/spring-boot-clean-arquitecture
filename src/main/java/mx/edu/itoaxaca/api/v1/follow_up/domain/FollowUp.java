@@ -17,12 +17,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.channeling_follow_up.domain.ChannellingFollowUp;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "follow_ups")
 @NoArgsConstructor
-public class FollowUp {
+public class FollowUp extends WithTimestamps{
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;

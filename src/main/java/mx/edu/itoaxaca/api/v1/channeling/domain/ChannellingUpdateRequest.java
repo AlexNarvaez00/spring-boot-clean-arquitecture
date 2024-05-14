@@ -30,9 +30,9 @@ public class ChannellingUpdateRequest {
             null,
             new ChannellingComment(this.comment),
             new ChannellingDate(this.date),
-            new Profile(this.tutor_id, null, null, null, null, null),
-            new Profile(this.student_id, null, null, null, null, null),
-            new Profile(this.support_staff_id, null, null, null, null, null)
+            new Profile(this.tutor_id, null, null, null, null),
+            new Profile(this.student_id, null, null, null, null),
+            new Profile(this.support_staff_id, null, null, null, null)
         );
     }
 }

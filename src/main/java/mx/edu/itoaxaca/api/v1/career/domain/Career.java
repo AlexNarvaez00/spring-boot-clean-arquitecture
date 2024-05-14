@@ -19,13 +19,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.action_plan.domain.ActionPlan;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.workshop.domain.Workshop;
 
 @Entity
 @Table(name = "careers")
 @Data
 @NoArgsConstructor
-public class Career {
+public class Career extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -52,6 +53,11 @@ public class Career {
     @OneToMany(mappedBy = "career")
     @JsonIgnore
     private List<ActionPlan> actionsPlans;
+
+    @OneToMany(mappedBy = "career")
+    @JsonIgnore
+    private List<Career> careers;
+
 
     public Career(UUID id, CareerName name, Departament departament) {
         this.id = id;

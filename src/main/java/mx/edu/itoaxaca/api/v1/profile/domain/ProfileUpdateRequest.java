@@ -25,7 +25,6 @@ public class ProfileUpdateRequest {
             new ProfileName(this.name),
             new ProfileEmail(this.email),
             new ProfilePassword(this.password),
-            new ProfileCreatedAt(LocalDateTime.now()),
             null
         );
     }

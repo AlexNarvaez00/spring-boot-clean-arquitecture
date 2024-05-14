@@ -7,6 +7,6 @@ import org.springframework.data.domain.Pageable;
 
 public class PeriodGetAll {
     public static Page<Period> run(Pageable pageable, PeriodRepository repo) {
-        return repo.findAll(pageable);
+        return repo.findByDeletedAtIsNull(pageable);
     }
 }

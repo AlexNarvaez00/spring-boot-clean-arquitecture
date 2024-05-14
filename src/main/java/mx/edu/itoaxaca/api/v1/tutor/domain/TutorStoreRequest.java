@@ -20,7 +20,7 @@ public class TutorStoreRequest {
         return new Tutor(
             (this.id == null) ? null : UUID.randomUUID(),
             new TutorClassification(this.classification),
-            new Profile(this.profile_id, null, null, null, null, null)
+            new Profile(this.profile_id, null, null, null, null)
         );
     }
 }

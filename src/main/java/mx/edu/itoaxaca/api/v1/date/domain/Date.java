@@ -12,13 +12,14 @@ import jakarta.persistence.Table;
 import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.type_date.domain.TypeDate;
 
 @Data
 @Entity
 @Table(name = "dates")
 @NoArgsConstructor
-public class Date {
+public class Date extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

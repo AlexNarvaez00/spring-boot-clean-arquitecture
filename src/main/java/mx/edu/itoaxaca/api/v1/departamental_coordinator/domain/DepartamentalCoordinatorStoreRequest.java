@@ -20,7 +20,7 @@ public class DepartamentalCoordinatorStoreRequest {
         return new DepartamentalCoordinator(
             (this.id == null) ? null : UUID.randomUUID(),
             new DepartamentalCoordinatorDegree(this.degree),
-            new Profile(profile_id, null, null, null, null, null)
+            new Profile(profile_id, null, null, null, null)
         );
     }
 }

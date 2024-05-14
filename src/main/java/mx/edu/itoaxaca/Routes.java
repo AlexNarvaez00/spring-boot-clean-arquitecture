@@ -63,4 +63,6 @@ public class Routes {
     public static final String API_V1_DEPARTAMENTAL_COORDINATOR_BASE = "/api/v1/departamental-coordinator";
     
     public static final String API_V1_CHANNELING_BASE = "/api/v1/channeling";
+    
+    public static final String API_V1_COMMENT_EVALUATION_BASE = "/api/v1/comment-evaluation";
 }

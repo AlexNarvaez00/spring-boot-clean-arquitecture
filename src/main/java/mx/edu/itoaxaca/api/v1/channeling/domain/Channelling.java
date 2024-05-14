@@ -18,12 +18,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.channeling_follow_up.domain.ChannellingFollowUp;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "channelings")
 @NoArgsConstructor
-public class Channelling {
+public class Channelling extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

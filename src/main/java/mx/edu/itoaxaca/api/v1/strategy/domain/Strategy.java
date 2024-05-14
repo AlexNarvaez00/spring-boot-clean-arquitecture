@@ -18,12 +18,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.activity_institutional_mentoring_program.domain.ActivityInstitutionalMentoringProgram;
 import mx.edu.itoaxaca.api.v1.institutional_mentoring_program.domain.InstitutionalMentoringProgram;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "strategies")
 @NoArgsConstructor
-public class Strategy {
+public class Strategy extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

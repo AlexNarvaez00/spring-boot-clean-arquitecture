@@ -16,13 +16,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.strategy.domain.Strategy;
 
 @Data
 @Entity
 @Table(name = "institutional_mentoring_programs")
 @NoArgsConstructor
-public class InstitutionalMentoringProgram {
+public class InstitutionalMentoringProgram extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

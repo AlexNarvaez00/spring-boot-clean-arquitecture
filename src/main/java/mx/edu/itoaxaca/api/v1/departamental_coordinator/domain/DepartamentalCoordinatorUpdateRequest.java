@@ -19,7 +19,7 @@ public class DepartamentalCoordinatorUpdateRequest {
         return new DepartamentalCoordinator(
             null,
             new DepartamentalCoordinatorDegree(this.name),
-            new Profile(profile_id, null, null, null, null, null)
+            new Profile(profile_id, null, null, null, null)
         );
     }
 }

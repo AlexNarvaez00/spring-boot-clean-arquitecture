@@ -23,7 +23,7 @@ public class SupportStaffUpdateRequest {
             null,
             new SupportStaffJobTitle(this.jobTitle),
             new SupportArea(support_area_id, null, null, null),
-            new Profile(profile_id, null, null, null, null, null)
+            new Profile(profile_id, null, null, null, null)
         );
     }
 }

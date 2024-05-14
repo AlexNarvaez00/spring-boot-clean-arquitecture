@@ -20,7 +20,7 @@ public class InstitutionalCoordinatorStoreRequest {
         return new InstitutionalCoordinator(
             (this.id == null) ? null : UUID.randomUUID(),
             new InstitutionalCoordinatorDegree(this.degree),
-            new Profile(this.profile_id, null, null, null, null, null)
+            new Profile(this.profile_id, null, null, null, null)
         );
     }
 }

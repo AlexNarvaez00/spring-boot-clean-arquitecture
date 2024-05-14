@@ -22,7 +22,6 @@ public class CommentEvaluationGroupStoreRequest {
         return new CommentEvaluationGroup(
             (this.id == null) ? null : UUID.randomUUID(),
             new CommentEvaluationGroupComment(this.comment),
-            new CommentEvaluationGroupCreatedAt(LocalDate.now()),
             new Group(this.group_id, null, null, null)
         );
     }

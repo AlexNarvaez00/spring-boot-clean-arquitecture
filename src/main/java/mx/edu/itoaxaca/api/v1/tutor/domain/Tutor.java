@@ -13,12 +13,13 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
+import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
 @Table(name = "tutors")
 @NoArgsConstructor
-public class Tutor {
+public class Tutor extends WithTimestamps{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -33,6 +34,7 @@ public class Tutor {
     private Profile profile;
 
     public Tutor(UUID id, TutorClassification classification, Profile profile) {
+        super();
         this.id = id;
         this.classification = classification;
         this.profile = profile;
