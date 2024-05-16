@@ -10,11 +10,13 @@ import jakarta.persistence.Table;
 import java.util.UUID;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
 @Data
 @Entity
+@EqualsAndHashCode(callSuper = false)
 @Table(name = "periods")
 @NoArgsConstructor
 public class Period extends WithTimestamps{
@@ -41,6 +43,7 @@ public class Period extends WithTimestamps{
         PeriodEndDate endDate,
         PeriodCurrent current
     ) {
+        super();
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;

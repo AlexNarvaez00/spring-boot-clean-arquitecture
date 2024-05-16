@@ -18,6 +18,7 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.action_plan.domain.ActionPlan;
+import mx.edu.itoaxaca.api.v1.comment_evaluation.domain.CommentEvaluation;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.workshop.domain.Workshop;
@@ -56,8 +57,7 @@ public class Career extends WithTimestamps{
 
     @OneToMany(mappedBy = "career")
     @JsonIgnore
-    private List<Career> careers;
-
+    private List<CommentEvaluation> commentEvaluations;
 
     public Career(UUID id, CareerName name, Departament departament) {
         this.id = id;

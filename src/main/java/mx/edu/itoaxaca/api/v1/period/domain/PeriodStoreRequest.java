@@ -3,9 +3,10 @@ package mx.edu.itoaxaca.api.v1.period.domain;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
-import lombok.Data;
 
-@Data
+import lombok.Setter;
+
+@Setter
 public class PeriodStoreRequest {
 
     private UUID id;
