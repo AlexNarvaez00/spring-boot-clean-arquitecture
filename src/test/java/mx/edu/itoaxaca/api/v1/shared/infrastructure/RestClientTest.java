@@ -8,9 +8,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-public class RestClient<T> {
+import lombok.Getter;
+
+public class RestClientTest<T> {
 
     @MockBean
+    @Getter
     private T repo;
 
     @Autowired
@@ -28,6 +31,22 @@ public class RestClient<T> {
                 MockMvcRequestBuilders.post(url)
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(body)
+            );
+    }
+    
+    public <Request> ResultActions put(String url, Request request) throws Exception {
+        String body = JsonParse.toJson(request); 
+        return this.client.perform(
+                MockMvcRequestBuilders.put(url)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(body)
+            );
+    }
+
+    public <Request> ResultActions delete(String url) throws Exception {
+        return this.client.perform(
+                MockMvcRequestBuilders.delete(url)
+                    .contentType(MediaType.APPLICATION_JSON)
             );
     }
 }

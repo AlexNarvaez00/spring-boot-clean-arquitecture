@@ -1,0 +1,22 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.application;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}};
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Mother;
+import mx.edu.itoaxaca.api.v1.{{name}}.infrastructure.persistence.{{Name}}RepositoryMock;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+public class {{Name}}GetByIdTest {
+    void runTest() {
+        var creator = new {{Name}}GetById();
+        var repo = {{Name}}RepositoryMock.mock;
+
+        {{Name}} {{name}} = {{Name}}Mother.random(true);
+        Mockito.when(repo.find{{name}}ById({{name}}.getId())).thenReturn({{name}});
+        {{Name}} {{name}}Finded = {{Name}}GetById.run(repo, {{name}}.getId());
+
+        assertEquals({{name}}.getId(), {{name}}Finded.getId()); 
+    }
+}

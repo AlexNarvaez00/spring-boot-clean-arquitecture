@@ -1,0 +1,23 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.application;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}};
+import mx.edu.itoaxaca.api.v1.{{name}}.domain.{{Name}}Mother;
+import mx.edu.itoaxaca.api.v1.{{name}}.infrastructure.persistence.{{Name}}RepositoryMock;
+
+public class {{Name}}UpdateTest {
+    void runTest() {
+        var creator = new {{Name}}Update();
+        var repo = {{Name}}RepositoryMock.mock;
+
+        {{Name}} {{name}} = {{Name}}Mother.random(true);
+        Mockito.when(repo.save({{name}})).thenReturn({{name}});
+        {{Name}} {{name}}Updated = {{Name}}Update.run(repo, {{name}}.getId(), {{name}});
+
+        assertEquals({{name}}, {{name}}Updated); 
+    }
+}

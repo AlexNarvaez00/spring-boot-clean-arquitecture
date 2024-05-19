@@ -1,7 +1,7 @@
 {
     "tabWidth": 4,
     "trailingComma": "none",
-    "printWidth": 90,
+    "printWidth": 80,
     "useTabs": false,
     "plugins": ["prettier-plugin-java"]
 }

@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import mx.edu.itoaxaca.api.v1.period.domain.Period;
-import mx.edu.itoaxaca.api.v1.period.domain.PeriodMother;
 import mx.edu.itoaxaca.api.v1.period.infrastructure.persistence.PeriodRepositoryMock;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

@@ -1,0 +1,19 @@
+package mx.edu.itoaxaca.api.v1.{{name}}.domain;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class {{Name}}UpdateRequestTest {
+    @Test
+    void testAs{{Name}}() {
+        {{Name}} {{name}} = {{Name}}Mother.random();
+        var request = new {{Name}}UpdateRequest();
+
+        var {{name}}FromReq = request.as{{Name}}();
+
+        assertEquals();
+        assertEquals();
+    }
+   
+}
