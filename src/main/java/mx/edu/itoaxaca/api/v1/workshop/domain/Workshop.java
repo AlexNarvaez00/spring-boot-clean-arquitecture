@@ -52,20 +52,6 @@ public class Workshop extends WithTimestamps{
     )
     private List<Career> careers;
 
-    public Workshop(
-        UUID id,
-        WorkshopName name,
-        WorkshopDate date,
-        WorkshopSpeaker speaker,
-        WorkshopSpeakerInstitution speakerInstitution
-    ) {
-        this.id = id;
-        this.name = name;
-        this.date = date;
-        this.speaker = speaker;
-        this.speakerInstitution = speakerInstitution;
-    }
-
     public Workshop(UUID id, WorkshopName name, WorkshopDate date, WorkshopSpeaker speaker,
             WorkshopSpeakerInstitution speakerInstitution, List<Career> careers) {
         this.id = id;
@@ -75,7 +61,5 @@ public class Workshop extends WithTimestamps{
         this.speakerInstitution = speakerInstitution;
         this.careers = careers;
     }
-
-
 
 }

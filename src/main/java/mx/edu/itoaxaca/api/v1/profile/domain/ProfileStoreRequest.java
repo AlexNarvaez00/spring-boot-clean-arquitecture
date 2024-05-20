@@ -1,13 +1,12 @@
 package mx.edu.itoaxaca.api.v1.profile.domain;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class ProfileStoreRequest {
     private UUID id;
     

@@ -1,5 +1,6 @@
 package mx.edu.itoaxaca.api.v1.profile.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -8,12 +9,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 import java.util.UUID;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.departament_teacher.domain.DepartamentTeacher;
@@ -27,9 +25,10 @@ import mx.edu.itoaxaca.api.v1.tutor.domain.Tutor;
 
 @Data
 @Entity
-@Table(name = "profiles")
 @NoArgsConstructor
-public class Profile extends WithTimestamps{
+@Table(name = "profiles")
+@EqualsAndHashCode(callSuper = false)
+public class Profile extends WithTimestamps {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -54,27 +53,27 @@ public class Profile extends WithTimestamps{
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private InstitutionalCoordinator institutionalCoordinator;
-    
+
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private Tutor tutor;
-    
+
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private SupportStaff supportStaff;
-    
+
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private Student student;
-    
+
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private Teacher teacher;
-    
+
     @OneToOne(mappedBy = "departamentCoordinator")
     @JsonIgnore
     private Departament departament;
-    
+
     @OneToOne(mappedBy = "profile")
     @JsonIgnore
     private DepartamentalCoordinator departamentalCoordinator;
@@ -82,7 +81,7 @@ public class Profile extends WithTimestamps{
     @OneToOne(mappedBy = "teacher")
     @JsonIgnore
     private DepartamentTeacher departamentTeacher;
-    
+
     public Profile(
         UUID id,
         ProfileName name,

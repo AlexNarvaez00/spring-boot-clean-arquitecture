@@ -17,7 +17,7 @@ public class PeriodGetAllTest {
     void testRun() {
         var creator = new PeriodGetAll();
 
-        var repo = PeriodRepositoryMock.mock;
+        var repo = PeriodRepositoryMock.mock();
 
         PageRequest pageReq = PageRequest.of(0, 2);
         Page<Period> periods = new PageImpl<Period>(new ArrayList<Period>(), pageReq, 0);

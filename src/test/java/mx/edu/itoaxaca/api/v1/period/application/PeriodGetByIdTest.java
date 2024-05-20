@@ -13,7 +13,7 @@ public class PeriodGetByIdTest {
     @Test
     void testRun() {
         var creator = new PeriodGetById();
-        var repo = PeriodRepositoryMock.mock;
+        var repo = PeriodRepositoryMock.mock();
 
         Period period = PeriodMother.random(true);
         Mockito.when(repo.findPeriodById(period.getId())).thenReturn(period);

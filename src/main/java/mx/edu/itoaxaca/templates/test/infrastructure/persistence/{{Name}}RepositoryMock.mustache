@@ -5,5 +5,7 @@ import org.mockito.Mockito;
 
 public class {{Name}}RepositoryMock {
 
-    public static final {{Name}}Repository mock = Mockito.mock({{Name}}Repository.class);
+    public static {{Name}}Repository mock(){
+        return Mockito.mock({{Name}}Repository.class);
+    }
 }

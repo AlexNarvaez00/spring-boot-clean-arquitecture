@@ -3,9 +3,9 @@ package mx.edu.itoaxaca.api.v1.type_support_area.domain;
 import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class TypeSupportAreaStoreRequest {
     private UUID id;
 

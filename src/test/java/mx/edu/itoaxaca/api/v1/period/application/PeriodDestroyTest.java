@@ -17,12 +17,11 @@ public class PeriodDestroyTest {
 
         Period period = PeriodMother.random(true);
 
-        var repo = PeriodRepositoryMock.mock;
+        var repo = PeriodRepositoryMock.mock();
         Mockito.when(repo.findPeriodById(period.getId())).thenReturn(period);
 
-        Mockito.doNothing().when(repo).deleteById(period.getId());
         PeriodDestroy.run(repo, period.getId());
 
-        verify(repo, times(1));
+        verify(repo, times(1)).findPeriodById(period.getId());
     }
 }

@@ -17,7 +17,7 @@ public class PeriodCreateTest {
         
         Period period = PeriodMother.random(true);
         
-        var repo = PeriodRepositoryMock.mock;
+        var repo = PeriodRepositoryMock.mock();
         Mockito.when(repo.save(period)).thenReturn(period);
 
         Period periodCreated = PeriodCreate.run(repo, period);

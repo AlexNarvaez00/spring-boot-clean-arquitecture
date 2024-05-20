@@ -5,5 +5,7 @@ import org.mockito.Mockito;
 
 public class PeriodRepositoryMock {
 
-    public static final PeriodRepository mock = Mockito.mock(PeriodRepository.class);
+    public static PeriodRepository mock() {
+        return Mockito.mock(PeriodRepository.class);
+    }
 }

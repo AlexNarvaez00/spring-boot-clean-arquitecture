@@ -1,7 +1,9 @@
 package mx.edu.itoaxaca.api.v1.shared.domain.ValueObject;
 
 import com.github.javafaker.Faker;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class DateValueObjectMother extends DateValueObject {
 
@@ -11,10 +13,10 @@ public class DateValueObjectMother extends DateValueObject {
 
     public static LocalDate random() {
         Faker fake = new Faker();
-        return LocalDate.of(
-            fake.random().nextInt(2020, 2030),
-            fake.random().nextInt(1, 12),
-            fake.random().nextInt(1, 31)
-        );
+
+        var time = fake.date().birthday().getTime();
+        Instant instant = Instant.ofEpochMilli(time);
+
+        return LocalDate.ofInstant(instant, ZoneId.systemDefault());
     }
 }
