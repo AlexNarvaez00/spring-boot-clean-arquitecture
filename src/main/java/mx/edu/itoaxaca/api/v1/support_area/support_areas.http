@@ -10,3 +10,13 @@ content-type: application/json
     "name": "name-{{$randomInt 100 1000}}",
     "short_name":"AB{{$randomInt 10 99}}"
 }
+
+### errors
+
+POST http://localhost:8080/api/v1/support-area
+content-type: application/json
+
+{
+    "name": "aqsw",
+    "short_name":"AB{{$randomInt 10 99}}" 
+}

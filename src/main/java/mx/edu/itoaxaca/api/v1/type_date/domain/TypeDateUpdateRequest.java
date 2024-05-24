@@ -1,9 +1,9 @@
 package mx.edu.itoaxaca.api.v1.type_date.domain;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class TypeDateUpdateRequest {
     
     @NotNull

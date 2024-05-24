@@ -7,10 +7,10 @@ import java.util.UUID;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 
-@Data
+@Setter
 public class WorkshopUpdateRequest {
 
     @NotBlank

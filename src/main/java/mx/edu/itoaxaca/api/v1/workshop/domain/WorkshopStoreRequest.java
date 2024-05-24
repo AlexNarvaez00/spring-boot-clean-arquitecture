@@ -3,13 +3,14 @@ package mx.edu.itoaxaca.api.v1.workshop.domain;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
-import lombok.Data;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 
-@Data
+@Setter
 public class WorkshopStoreRequest {
 
     private UUID id;
@@ -30,6 +31,7 @@ public class WorkshopStoreRequest {
     private UUID[] career_ids;
 
     public Workshop aWorkshop() {
+
         return new Workshop(
             id != null ? id : UUID.randomUUID(),
             new WorkshopName(this.name),

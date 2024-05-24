@@ -4,21 +4,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-public class WorkshopNameConverterTest {
+public class WorkshopSpeakerConverterTest {
 
     @Test
     void testConvertToDatabaseColumn() {
         Workshop workshop = WorkshopMother.random();
-        var converter = new WorkshopNameConverter();
+        var converter = new WorkshopSpeakerConverter();
         var primitiveColumn = converter.convertToDatabaseColumn(
-            workshop.getName()
+            workshop.getSpeaker()
         );
         assertTrue(primitiveColumn instanceof String);
     }
 
     @Test
     void testConvertToDatabaseColumnWithNullValue() {
-        var converter = new WorkshopNameConverter();
+        var converter = new WorkshopSpeakerConverter();
         var primitiveColumn = converter.convertToDatabaseColumn(null);
         assertTrue(primitiveColumn == null);
     }
@@ -27,16 +27,16 @@ public class WorkshopNameConverterTest {
     void testConvertToEntityAttribute() {
         var workshop = WorkshopMother.random();
 
-        var converter = new WorkshopNameConverter();
+        var converter = new WorkshopSpeakerConverter();
         var column = converter.convertToEntityAttribute(
             workshop.getName().getValue()
         );
-        assertTrue(column instanceof WorkshopName);
+        assertTrue(column instanceof WorkshopSpeaker);
     }
-
+    
     @Test
     void testConvertToEntityAttributeWithNullValue() {
-        var converter = new WorkshopNameConverter();
+        var converter = new WorkshopSpeakerConverter();
         var column = converter.convertToEntityAttribute(null);
         assertTrue(column == null);
     }

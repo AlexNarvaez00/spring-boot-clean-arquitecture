@@ -1,6 +1,7 @@
 package mx.edu.itoaxaca.api.v1.shared.domain.ValueObject;
 
 import lombok.Getter;
+import mx.edu.itoaxaca.api.v1.shared.domain.errors.IllegalArgumentValueObjectException;
 
 public abstract class IntegerValueObject implements ValueObject<Integer> {
 
@@ -8,7 +9,8 @@ public abstract class IntegerValueObject implements ValueObject<Integer> {
     private Integer value;
 
     public IntegerValueObject(Integer value) {
-        if (!this.isValid(value)) throw new IllegalArgumentException(
+        if (!this.isValid(value)) throw new IllegalArgumentValueObjectException(
+            "integer",
             "Value <" + value + "> is not valid"
         );
         this.value = value;

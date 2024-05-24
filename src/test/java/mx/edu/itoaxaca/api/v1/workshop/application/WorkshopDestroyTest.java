@@ -26,6 +26,6 @@ public class WorkshopDestroyTest {
         Mockito.doNothing().when(repo).deleteById(workshop.getId());
         WorkshopDelete.run(repo, workshop.getId());
 
-        verify(repo, times(1));
+        verify(repo, times(1)).deleteById(workshop.getId());
     }
 }
