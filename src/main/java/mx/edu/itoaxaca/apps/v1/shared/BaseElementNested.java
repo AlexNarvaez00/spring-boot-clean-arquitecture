@@ -1,5 +1,6 @@
 package mx.edu.itoaxaca.apps.v1.shared;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
@@ -11,6 +12,7 @@ public abstract class BaseElementNested extends BaseElement{
     
     public BaseElementNested(String tagName) {
         super(tagName);
+        this.childrens = new ArrayList<>();
     }
 
     public String renderChildrens(){

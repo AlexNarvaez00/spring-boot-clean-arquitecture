@@ -1,9 +1,9 @@
 package mx.edu.itoaxaca.apps.v1.shared;
 
-public class UlElement extends BaseElementNested implements HTMLElementNested {
+public class LiElement extends BaseElementNested implements HTMLElementNested {
 
-    public UlElement() {
-        super("ul");
+    public LiElement() {
+        super("li");
     }
 
     @Override
@@ -18,7 +18,7 @@ public class UlElement extends BaseElementNested implements HTMLElementNested {
     }
 
     @Override
-    public void add(HTMLElement children) {
-        this.getChildrens().add(children);
+    public void add(HTMLElement childre) {
+        this.getChildrens().add(childre);
     }
 }
