@@ -2,6 +2,7 @@ package mx.edu.itoaxaca.api.v1.shared.infrastructure;
 
 import lombok.Getter;
 import mx.edu.itoaxaca.api.v1.shared.JsonParse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;

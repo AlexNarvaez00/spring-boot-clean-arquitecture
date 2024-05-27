@@ -4,11 +4,11 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 import mx.edu.itoaxaca.api.v1.speciality.domain.Speciality;
 
-@Data
+@Setter
 public class SyllabusStoreRequest {
 
     private UUID id;

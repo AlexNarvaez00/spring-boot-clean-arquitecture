@@ -51,20 +51,6 @@ public class Syllabus extends WithTimestamps{
 
     public Syllabus(
         UUID id,
-        SyllabusCode syllabusCode,
-        SyllabusStartDate syllabusStartDate,
-        SyllabusEndDate syllabusEndDate,
-        Career career
-    ) {
-        this.id = id;
-        this.code = syllabusCode;
-        this.startDate = syllabusStartDate;
-        this.endDate = syllabusEndDate;
-        this.career = career;
-    }
-
-    public Syllabus(
-        UUID id,
         SyllabusCode code,
         SyllabusStartDate startDate,
         SyllabusEndDate endDate,

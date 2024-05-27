@@ -2,11 +2,11 @@ package mx.edu.itoaxaca.api.v1.teacher.domain;
 
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.departament.domain.Departament;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
 
-@Data
+@Setter
 public class TeacherStoreRequest {
 
     private UUID id;
@@ -26,7 +26,7 @@ public class TeacherStoreRequest {
 
     public Teacher asTeacher() {
         return new Teacher(
-            (this.id == null) ? null : UUID.randomUUID(),
+            (this.id == null) ? UUID.randomUUID() : this.id,
             new TeacherType(this.type),
             new Profile(this.profile_id, null, null, null, null)
         );
