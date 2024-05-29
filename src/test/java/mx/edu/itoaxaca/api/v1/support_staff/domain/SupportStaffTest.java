@@ -27,7 +27,7 @@ public class SupportStaffTest {
 
     @Test
     void testCompareSupportStaff() {
-        SupportStaff temp = SupportStaffMother.random(true);
+        SupportStaff temp = SupportStaffMother.random();
         SupportStaff temp2 = temp;
         assertTrue(temp.equals(temp2));
         assertInstanceOf(Integer.class, temp2.hashCode());
@@ -35,14 +35,14 @@ public class SupportStaffTest {
 
     @Test
     void testToString() {
-        SupportStaff support_staff = SupportStaffMother.random(true);
+        SupportStaff support_staff = SupportStaffMother.random();
         assertTrue(support_staff.toString().contains(support_staff.getId().toString()));
     }
 
     @Test
     void testNotCompareSupportStaff() {
-        SupportStaff temp = SupportStaffMother.random(true);
-        SupportStaff temp2 = SupportStaffMother.random(true);
+        SupportStaff temp = SupportStaffMother.random();
+        SupportStaff temp2 = SupportStaffMother.random();
         assertFalse(temp.equals(temp2));
     }
 
@@ -57,7 +57,7 @@ public class SupportStaffTest {
 
     @Test
     void testTimestamps() {
-        SupportStaff support_staff = SupportStaffMother.random(true);
+        SupportStaff support_staff = SupportStaffMother.random();
         var support_staffAssert = new WithTimestampsTest<SupportStaff>();
         support_staffAssert.assertWithTimestamp(support_staff);
 

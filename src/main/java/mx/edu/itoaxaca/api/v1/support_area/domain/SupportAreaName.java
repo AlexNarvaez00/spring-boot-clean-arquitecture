@@ -10,6 +10,6 @@ public class SupportAreaName extends StringValueObject {
 
     @Override
     public boolean isValid(String value) {
-        return value != null && value.length() > 5;
+        return value != null && value.length() >= 5;
     }
 }

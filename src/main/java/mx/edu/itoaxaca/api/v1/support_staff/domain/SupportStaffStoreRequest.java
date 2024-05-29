@@ -3,10 +3,11 @@ package mx.edu.itoaxaca.api.v1.support_staff.domain;
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
 import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
 import mx.edu.itoaxaca.api.v1.support_area.domain.SupportArea;
 
-@Data
+@Setter
 public class SupportStaffStoreRequest {
 
     private UUID id;

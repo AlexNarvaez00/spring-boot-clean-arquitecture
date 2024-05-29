@@ -10,10 +10,14 @@ public class SupportStaffStoreRequestTest {
     void testAsSupportStaff() {
         SupportStaff support_staff = SupportStaffMother.random();
         var request = new SupportStaffStoreRequest();
+        request.setJob_title(support_staff.getJobTitle().getValue());
+        request.setId(support_staff.getId());
 
         var support_staffFromReq = request.asSupportStaff();
 
-        assertEquals();
-        assertEquals();
-    } 
+        assertEquals(
+            support_staff.getJobTitle().getValue(),
+            support_staffFromReq.getJobTitle().getValue()
+        );
+    }
 }

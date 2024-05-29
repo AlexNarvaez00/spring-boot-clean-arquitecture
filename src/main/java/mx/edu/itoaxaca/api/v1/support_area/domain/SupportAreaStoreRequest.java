@@ -2,10 +2,11 @@ package mx.edu.itoaxaca.api.v1.support_area.domain;
 
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
 
-@Data
+
+@Setter
 public class SupportAreaStoreRequest {
 
     private UUID id;

@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = Routes.API_V1_SUPPORT_AREAS_BASE)
 @RequiredArgsConstructor
-public class SupporAreaController {
+public class SupportAreaController {
 
     private final SupportAreaRepository repo;
 

@@ -9,11 +9,12 @@ public class SupportStaffUpdateRequestTest {
     void testAsSupportStaff() {
         SupportStaff support_staff = SupportStaffMother.random();
         var request = new SupportStaffUpdateRequest();
-
+        request.setJobTitle(support_staff.getJobTitle().getValue());
         var support_staffFromReq = request.asSupportStaff();
-
-        assertEquals();
-        assertEquals();
+        assertEquals(
+            support_staff.getJobTitle().getValue(),
+            support_staffFromReq.getJobTitle().getValue()
+        );
     }
    
 }
