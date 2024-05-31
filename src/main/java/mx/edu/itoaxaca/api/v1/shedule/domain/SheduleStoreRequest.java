@@ -4,10 +4,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
 
-@Data
+@Setter
 public class SheduleStoreRequest {
 
     private UUID id;

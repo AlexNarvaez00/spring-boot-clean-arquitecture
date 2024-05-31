@@ -16,8 +16,6 @@ import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.comments_evaluation_group.domain.CommentEvaluationGroup;
 import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 
-import org.springframework.data.annotation.CreatedDate;
-
 @Data
 @Entity
 @Table(name = "groups")

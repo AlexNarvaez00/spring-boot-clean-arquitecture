@@ -1,9 +1,9 @@
 package mx.edu.itoaxaca.api.v1.shared.domain.errors;
 
-import lombok.Data;
+import lombok.Setter;
 import java.util.HashMap;
 
-@Data
+@Setter
 public class ErrorResponse {
 
     private HashMap<String, String> errors;

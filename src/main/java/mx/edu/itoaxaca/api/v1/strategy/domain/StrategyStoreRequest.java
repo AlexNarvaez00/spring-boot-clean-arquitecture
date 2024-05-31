@@ -2,10 +2,10 @@ package mx.edu.itoaxaca.api.v1.strategy.domain;
 
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.institutional_mentoring_program.domain.InstitutionalMentoringProgram;
 
-@Data
+@Setter
 public class StrategyStoreRequest {
 
     private UUID id;

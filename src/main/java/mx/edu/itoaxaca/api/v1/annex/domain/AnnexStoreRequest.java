@@ -4,10 +4,10 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.shared.JsonParse;
 
-@Data
+@Setter
 public class AnnexStoreRequest {
 
     private UUID id;

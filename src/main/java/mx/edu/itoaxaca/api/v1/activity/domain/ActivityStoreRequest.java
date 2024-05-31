@@ -2,12 +2,12 @@ package mx.edu.itoaxaca.api.v1.activity.domain;
 
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.action_plan.domain.ActionPlan;
 import mx.edu.itoaxaca.api.v1.activity_institutional_mentoring_program.domain.ActivityInstitutionalMentoringProgram;
 import mx.edu.itoaxaca.api.v1.annex.domain.Annex;
 
-@Data
+@Setter
 public class ActivityStoreRequest {
 
     private UUID id;

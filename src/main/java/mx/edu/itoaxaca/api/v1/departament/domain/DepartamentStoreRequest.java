@@ -2,9 +2,9 @@ package mx.edu.itoaxaca.api.v1.departament.domain;
 
 import jakarta.validation.constraints.NotEmpty;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class DepartamentStoreRequest {
 
     private UUID id;

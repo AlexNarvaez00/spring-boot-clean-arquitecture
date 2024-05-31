@@ -3,10 +3,10 @@ package mx.edu.itoaxaca.api.v1.channeling.domain;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.profile.domain.Profile;
 
-@Data
+@Setter
 public class ChannellingStoreRequest {
 
     private UUID id;

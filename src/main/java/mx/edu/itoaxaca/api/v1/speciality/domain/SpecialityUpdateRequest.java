@@ -2,9 +2,9 @@ package mx.edu.itoaxaca.api.v1.speciality.domain;
 
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class SpecialityUpdateRequest {
 
     @NotNull

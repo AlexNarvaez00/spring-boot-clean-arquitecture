@@ -4,11 +4,11 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.type_date.domain.TypeDate;
 import org.hibernate.validator.constraints.URL;
 
-@Data
+@Setter
 public class DateUpdateRequest {
 
     @NotNull

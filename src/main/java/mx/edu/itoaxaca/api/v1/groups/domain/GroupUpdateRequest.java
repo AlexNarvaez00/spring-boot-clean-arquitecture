@@ -1,9 +1,9 @@
 package mx.edu.itoaxaca.api.v1.groups.domain;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class GroupUpdateRequest {
 
     @NotNull

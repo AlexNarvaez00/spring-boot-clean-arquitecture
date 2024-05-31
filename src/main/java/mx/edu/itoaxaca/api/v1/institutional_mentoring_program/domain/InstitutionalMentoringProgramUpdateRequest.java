@@ -3,9 +3,9 @@ package mx.edu.itoaxaca.api.v1.institutional_mentoring_program.domain;
 import java.time.LocalDate;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class InstitutionalMentoringProgramUpdateRequest {
     
     @NotNull

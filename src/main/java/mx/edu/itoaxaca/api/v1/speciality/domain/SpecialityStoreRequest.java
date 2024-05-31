@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class SpecialityStoreRequest {
     private UUID id;
 

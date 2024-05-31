@@ -6,9 +6,9 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.constraints.NotNull;
 import java.util.HashMap;
-import lombok.Data;
+import lombok.Setter;
 
-@Data
+@Setter
 public class AnnexUpdateRequest {
 
     @NotNull

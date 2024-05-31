@@ -4,10 +4,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.groups.domain.Group;
 
-@Data
+@Setter
 public class CommentEvaluationGroupStoreRequest {
 
     private UUID id;

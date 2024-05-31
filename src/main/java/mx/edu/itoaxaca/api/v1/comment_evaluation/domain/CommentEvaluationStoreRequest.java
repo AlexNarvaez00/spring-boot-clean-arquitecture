@@ -3,10 +3,10 @@ package mx.edu.itoaxaca.api.v1.comment_evaluation.domain;
 import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.Setter;
 import mx.edu.itoaxaca.api.v1.career.domain.Career;
 
-@Data
+@Setter
 public class CommentEvaluationStoreRequest {
     private UUID id;
 
