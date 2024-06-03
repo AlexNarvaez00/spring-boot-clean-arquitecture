@@ -11,10 +11,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @WebMvcTest({{Name}}Controller.class)
-public class {{Name}}ControllerTes extends RestClientTest<{{Name}}Repository>{
+public class {{Name}}ControllerTest extends RestClientTest<{{Name}}Repository>{
     @Test
     void testDestroy() throws Exception {
-        var {{name}} = {{Name}}Mother.random(true);
+        var {{name}} = {{Name}}Mother.random();
         Mockito.when(this.getRepo().find{{Name}}ById({{name}}.getId())).thenReturn(
             {{name}}
         );
@@ -33,7 +33,7 @@ public class {{Name}}ControllerTes extends RestClientTest<{{Name}}Repository>{
 
     @Test
     void testShow() throws Exception {
-        var {{name}} = {{Name}}Mother.random(true);
+        var {{name}} = {{Name}}Mother.random();
         Mockito.when(this.getRepo().find{{Name}}ById({{name}}.getId())).thenReturn(
             {{name}}
         );
@@ -45,7 +45,7 @@ public class {{Name}}ControllerTes extends RestClientTest<{{Name}}Repository>{
 
     @Test
     void testStore() throws Exception {
-        var {{name}} = {{Name}}Mother.random(true);
+        var {{name}} = {{Name}}Mother.random();
         var request = new HashMap<String, String>();
 
         this.post(Routes.API_V1_{{name}}_BASE, request).andExpect(
@@ -55,8 +55,8 @@ public class {{Name}}ControllerTes extends RestClientTest<{{Name}}Repository>{
 
     @Test
     void testUpdate() throws Exception {
-        var {{name}} = {{Name}}Mother.random(true);
-        var {{name}}Update = {{Name}}Mother.random(true);
+        var {{name}} = {{Name}}Mother.random();
+        var {{name}}Update = {{Name}}Mother.random();
 
         var request = new HashMap<String, String>();
 

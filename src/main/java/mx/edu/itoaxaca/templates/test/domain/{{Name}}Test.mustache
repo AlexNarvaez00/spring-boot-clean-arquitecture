@@ -27,7 +27,7 @@ public class {{Name}}Test {
 
     @Test
     void testCompare{{Name}}() {
-        {{Name}} temp = {{Name}}Mother.random(true);
+        {{Name}} temp = {{Name}}Mother.random();
         {{Name}} temp2 = temp;
         assertTrue(temp.equals(temp2));
         assertInstanceOf(Integer.class, temp2.hashCode());
@@ -35,14 +35,14 @@ public class {{Name}}Test {
 
     @Test
     void testToString() {
-        {{Name}} {{name}} = {{Name}}Mother.random(true);
+        {{Name}} {{name}} = {{Name}}Mother.random();
         assertTrue({{name}}.toString().contains({{name}}.getId().toString()));
     }
 
     @Test
     void testNotCompare{{Name}}() {
-        {{Name}} temp = {{Name}}Mother.random(true);
-        {{Name}} temp2 = {{Name}}Mother.random(true);
+        {{Name}} temp = {{Name}}Mother.random();
+        {{Name}} temp2 = {{Name}}Mother.random();
         assertFalse(temp.equals(temp2));
     }
 
@@ -57,7 +57,7 @@ public class {{Name}}Test {
 
     @Test
     void testTimestamps() {
-        {{Name}} {{name}} = {{Name}}Mother.random(true);
+        {{Name}} {{name}} = {{Name}}Mother.random();
         var {{name}}Assert = new WithTimestampsTest<{{Name}}>();
         {{name}}Assert.assertWithTimestamp({{name}});
 

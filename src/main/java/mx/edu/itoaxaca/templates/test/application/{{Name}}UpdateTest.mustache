@@ -13,7 +13,7 @@ public class {{Name}}UpdateTest {
     @Test
     void runTest() {
         var creator = new {{Name}}Update();
-        var repo = {{Name}}RepositoryMock.mock;
+        var repo = {{Name}}RepositoryMock.mock();
 
         {{Name}} {{name}} = {{Name}}Mother.random(true);
         Mockito.when(repo.save({{name}})).thenReturn({{name}});

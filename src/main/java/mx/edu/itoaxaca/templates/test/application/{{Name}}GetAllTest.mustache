@@ -16,7 +16,7 @@ public class {{Name}}GetAllTest {
     void runTest() {
         var creator = new {{Name}}GetAll();
 
-        var repo = {{Name}}RepositoryMock.mock;
+        var repo = {{Name}}RepositoryMock.mock();
 
         PageRequest pageReq = PageRequest.of(0, 2);
         Page<{{Name}}> {{name}}s = new PageImpl<{{Name}}>(new ArrayList<{{Name}}>(), pageReq, 0);

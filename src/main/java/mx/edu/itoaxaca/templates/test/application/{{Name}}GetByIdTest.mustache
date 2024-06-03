@@ -12,7 +12,7 @@ public class {{Name}}GetByIdTest {
     @Test
     void runTest() {
         var creator = new {{Name}}GetById();
-        var repo = {{Name}}RepositoryMock.mock;
+        var repo = {{Name}}RepositoryMock.mock();
 
         {{Name}} {{name}} = {{Name}}Mother.random(true);
         Mockito.when(repo.find{{name}}ById({{name}}.getId())).thenReturn({{name}});

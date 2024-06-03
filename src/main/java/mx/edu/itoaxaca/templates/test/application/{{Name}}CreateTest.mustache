@@ -10,7 +10,7 @@ public class {{Name}}CreateTest {
         var creator = new {{Name}}Create();
         
         var {{name}} = {{Name}}Mother.random();
-        var repo = {{Name}}RepositoryMock.mock;
+        var repo = {{Name}}RepositoryMock.mock();
         Mockito.when(repo.save({{name}})).thenReturn({{name}});
     
         {{Name}} {{name}}Created = {{Name}}Create.run(repo, {{name}});

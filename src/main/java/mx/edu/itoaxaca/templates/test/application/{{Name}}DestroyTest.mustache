@@ -20,7 +20,7 @@ public class {{Name}}DestroyTest {
 
         {{Name}} {{name}} = {{Name}}Mother.random(true);
 
-        var repo = {{Name}}RepositoryMock.mock;
+        var repo = {{Name}}RepositoryMock.mock();
         Mockito.when(repo.find{{Name}}ById({{name}}.getId())).thenReturn({{name}});
 
         Mockito.doNothing().when(repo).deleteById({{name}}.getId());
