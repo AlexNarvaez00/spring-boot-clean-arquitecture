@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,6 +44,7 @@ public class Profile extends WithTimestamps {
     private ProfileEmail email;
 
     @Column(name = "password", nullable = false)
+    @JsonIgnore
     @Convert(converter = ProfilePasswordConverter.class)
     private ProfilePassword password;
 
@@ -50,35 +52,35 @@ public class Profile extends WithTimestamps {
     @Convert(converter = ProfileLastSessionConverter.class)
     private ProfileLastSession lastSession;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private InstitutionalCoordinator institutionalCoordinator;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private Tutor tutor;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private SupportStaff supportStaff;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private Student student;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private Teacher teacher;
 
-    @OneToOne(mappedBy = "departamentCoordinator")
+    @OneToOne(mappedBy = "departamentCoordinator", fetch = FetchType.LAZY)
     @JsonIgnore
     private Departament departament;
 
-    @OneToOne(mappedBy = "profile")
+    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY)
     @JsonIgnore
     private DepartamentalCoordinator departamentalCoordinator;
 
-    @OneToOne(mappedBy = "teacher")
+    @OneToOne(mappedBy = "teacher", fetch = FetchType.LAZY)
     @JsonIgnore
     private DepartamentTeacher departamentTeacher;
 

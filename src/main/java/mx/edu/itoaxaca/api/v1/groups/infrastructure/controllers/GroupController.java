@@ -13,9 +13,12 @@ import mx.edu.itoaxaca.api.v1.groups.domain.Group;
 import mx.edu.itoaxaca.api.v1.groups.domain.GroupRepository;
 import mx.edu.itoaxaca.api.v1.groups.domain.GroupStoreRequest;
 import mx.edu.itoaxaca.api.v1.groups.domain.GroupUpdateRequest;
+import mx.edu.itoaxaca.api.v1.shared.Config;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = Routes.API_V1_GROUP_BASE)
 @RequiredArgsConstructor
+@CrossOrigin(value = Config.BASE_URL_FRONTED)
 public class GroupController {
 
     private final GroupRepository repo;

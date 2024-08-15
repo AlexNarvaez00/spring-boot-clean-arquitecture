@@ -23,7 +23,7 @@ import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 @Table(name = "departaments")
 @Data
 @NoArgsConstructor
-public class Departament extends WithTimestamps{
+public class Departament extends WithTimestamps {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -50,5 +50,15 @@ public class Departament extends WithTimestamps{
     public Departament(UUID id, DepartamentName name) {
         this.id = id;
         this.name = name;
+    }
+
+    public Departament(
+        UUID id,
+        DepartamentName name,
+        Profile departamentCoordinator
+    ) {
+        this.id = id;
+        this.name = name;
+        this.departamentCoordinator = departamentCoordinator;
     }
 }
