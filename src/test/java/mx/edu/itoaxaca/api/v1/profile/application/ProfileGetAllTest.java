@@ -10,6 +10,7 @@ import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Field;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filter;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filters;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Limit;
+import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Offset;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Operator;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Value;
 import org.junit.jupiter.api.Test;
@@ -43,9 +44,8 @@ public class ProfileGetAllTest {
 
         Mockito.when(repo.findAll(pageReq)).thenReturn(profiles);
         Page<Profile> all = ProfileGetAll.run(
-            pageReq,
             repo,
-            new Criteria(filters, limited)
+            new Criteria(filters, new Offset(1), limited)
         );
         assertEquals(all.getSize(), 2);
     }

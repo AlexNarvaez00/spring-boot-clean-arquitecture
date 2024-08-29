@@ -9,6 +9,7 @@ import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Field;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filter;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filters;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Limit;
+import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Offset;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Operator;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Value;
 
@@ -38,7 +39,10 @@ public class ProfileIndexRequest extends QueryStringRequest {
         };
 
         Filters filters = new Filters(filter);
-        Criteria criteria = new Criteria(filters, new Limit(this.getPage()));
+        Limit limit = new Limit(this.getSize());
+        Offset offset = new Offset(getPage());
+
+        Criteria criteria = new Criteria(filters, offset, limit);
         return criteria;
     }
 }
