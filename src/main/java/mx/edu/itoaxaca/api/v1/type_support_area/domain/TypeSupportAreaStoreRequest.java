@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Setter;
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
 
 @Setter
 public class TypeSupportAreaStoreRequest {
@@ -12,8 +13,8 @@ public class TypeSupportAreaStoreRequest {
     @NotNull
     private String type;
 
-    public TypeSupportArea asTypeSupportArea() {
-        return new TypeSupportArea(
+    public PostgresTypeSupportArea asTypeSupportArea() {
+        return new PostgresTypeSupportArea(
             (this.id == null) ? null : UUID.randomUUID(),
             new TypeSupportAreaType(this.type)
         );

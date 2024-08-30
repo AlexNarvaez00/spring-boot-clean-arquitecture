@@ -3,8 +3,8 @@ package mx.edu.itoaxaca.api.v1.type_support_area.application;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaMother;
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
 import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.TypeSupportAreaRepositoryMock;
 
 public class TypeSupportAreaCreateTest {

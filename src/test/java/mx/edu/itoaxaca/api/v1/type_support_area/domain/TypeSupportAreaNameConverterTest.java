@@ -3,13 +3,15 @@ package mx.edu.itoaxaca.api.v1.type_support_area.domain;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import mx.edu.itoaxaca.api.v1.shared.FakerService;
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
+
 import org.junit.jupiter.api.Test;
 
 public class TypeSupportAreaNameConverterTest {
 
     @Test
     void testConvertToDatabaseColumn() {
-        TypeSupportArea type_support_area = TypeSupportAreaMother.random();
+        PostgresTypeSupportArea type_support_area = TypeSupportAreaMother.random();
         var converter = new TypeSupportAreaTypeConverter();
         var primitiveColumn = converter.convertToDatabaseColumn(
             type_support_area.getType()

@@ -2,8 +2,8 @@ package mx.edu.itoaxaca.api.v1.type_support_area.application;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaMother;
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
 import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.TypeSupportAreaRepositoryMock;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -15,9 +15,9 @@ public class TypeSupportAreaGetByIdTest {
         var creator = new TypeSupportAreaGetById();
         var repo = TypeSupportAreaRepositoryMock.mock();
 
-        TypeSupportArea type_support_area = TypeSupportAreaMother.random();
+        PostgresTypeSupportArea type_support_area = TypeSupportAreaMother.random();
         Mockito.when(repo.findTypeSupportAreaById(type_support_area.getId())).thenReturn(type_support_area);
-        TypeSupportArea type_support_areaFinded = TypeSupportAreaGetById.run(repo, type_support_area.getId());
+        PostgresTypeSupportArea type_support_areaFinded = TypeSupportAreaGetById.run(repo, type_support_area.getId());
 
         assertEquals(type_support_area.getId(), type_support_areaFinded.getId()); 
     }

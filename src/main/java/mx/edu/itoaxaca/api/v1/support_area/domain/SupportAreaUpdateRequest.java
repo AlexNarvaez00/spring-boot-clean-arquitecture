@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Setter;
-import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
 
 @Setter
 public class SupportAreaUpdateRequest {
@@ -23,7 +23,7 @@ public class SupportAreaUpdateRequest {
             null,
             new SupportAreaName(this.name),
             new SupportAreaShortName(this.short_name),
-            new TypeSupportArea(this.type_support_area_id, null)
+            new PostgresTypeSupportArea(this.type_support_area_id, null)
         );
     }
 }

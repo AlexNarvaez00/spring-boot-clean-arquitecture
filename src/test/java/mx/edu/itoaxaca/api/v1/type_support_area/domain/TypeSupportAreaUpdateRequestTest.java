@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
+
 public class TypeSupportAreaUpdateRequestTest {
 
     @Test
     void testAsTypeSupportArea() {
-        TypeSupportArea typeSupportArea = TypeSupportAreaMother.random();
+        PostgresTypeSupportArea typeSupportArea = TypeSupportAreaMother.random();
         var request = new TypeSupportAreaUpdateRequest();
         request.setType(typeSupportArea.getType().getValue());
 
