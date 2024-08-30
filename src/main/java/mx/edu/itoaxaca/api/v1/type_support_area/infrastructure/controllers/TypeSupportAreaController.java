@@ -9,11 +9,11 @@ import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaDestr
 import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaGetAll;
 import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaGetById;
 import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaUpdate;
+import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaRepository;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaStoreRequest;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaUpdateRequest;
 import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -35,22 +35,24 @@ public class TypeSupportAreaController {
     private final TypeSupportAreaRepository repo;
 
     @GetMapping
-    Page<PostgresTypeSupportArea> index() {
+    Page<TypeSupportArea> index() {
         return TypeSupportAreaGetAll.run(PageRequest.of(0, 10), repo);
     }
 
     @GetMapping(value = "/{id}")
-    PostgresTypeSupportArea show(@PathVariable UUID id) {
+    TypeSupportArea show(@PathVariable UUID id) {
         return TypeSupportAreaGetById.run(repo, id);
     }
 
     @PostMapping
-    PostgresTypeSupportArea store(@Valid @RequestBody TypeSupportAreaStoreRequest request) {
+    TypeSupportArea store(
+        @Valid @RequestBody TypeSupportAreaStoreRequest request
+    ) {
         return TypeSupportAreaCreate.run(repo, request.asTypeSupportArea());
     }
 
     @PutMapping(value = "/{id}")
-    PostgresTypeSupportArea update(
+    TypeSupportArea update(
         @PathVariable UUID id,
         @Valid @RequestBody TypeSupportAreaUpdateRequest request
     ) {

@@ -10,17 +10,16 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.List;
 import java.util.UUID;
-import lombok.Data;
+
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
 import mx.edu.itoaxaca.api.v1.support_area.domain.SupportArea;
-import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaType;
-import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaTypeConverter;
 
-@Data
 @Entity
 @Table(name = "type_support_areas")
 @NoArgsConstructor
+@Getter
 public class PostgresTypeSupportArea extends WithTimestamps{
 
     @Id
@@ -28,13 +27,12 @@ public class PostgresTypeSupportArea extends WithTimestamps{
     private UUID id;
 
     @Column(name = "type", nullable = false)
-    @Convert(converter = TypeSupportAreaTypeConverter.class)
-    private TypeSupportAreaType type;
+    private String type;
 
     @OneToMany(mappedBy = "type_support_area")
     private List<SupportArea> support_areas;
 
-    public PostgresTypeSupportArea(UUID id, TypeSupportAreaType type) {
+    public PostgresTypeSupportArea(UUID id, String type) {
         this.id = id;
         this.type = type;
     }
