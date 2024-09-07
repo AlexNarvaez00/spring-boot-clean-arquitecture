@@ -18,12 +18,12 @@ public class TypeSupportAreaControllerTest
     void testDestroy() throws Exception {
         var type_support_area = TypeSupportAreaMother.random();
         Mockito.when(
-            this.getRepo().findTypeSupportAreaById(type_support_area.getId())
+            this.getRepo().findTypeSupportAreaById(type_support_area.id())
         ).thenReturn(type_support_area);
         var url =
             Routes.API_V1_TYPE_SUPPORT_AREAS_BASE +
             "/" +
-            type_support_area.getId().toString();
+            type_support_area.id().toString();
         this.delete(url).andExpect(
                 MockMvcResultMatchers.status().isNoContent()
             );
@@ -40,13 +40,13 @@ public class TypeSupportAreaControllerTest
     void testShow() throws Exception {
         var type_support_area = TypeSupportAreaMother.random();
         Mockito.when(
-            this.getRepo().findTypeSupportAreaById(type_support_area.getId())
+            this.getRepo().findTypeSupportAreaById(type_support_area.id())
         ).thenReturn(type_support_area);
 
         var url =
             Routes.API_V1_TYPE_SUPPORT_AREAS_BASE +
             "/" +
-            type_support_area.getId().toString();
+            type_support_area.id().toString();
 
         this.get(url).andExpect(MockMvcResultMatchers.status().isOk());
     }
@@ -55,7 +55,7 @@ public class TypeSupportAreaControllerTest
     void testStore() throws Exception {
         var typeAupportArea = TypeSupportAreaMother.random();
         var request = new HashMap<String, String>();
-        request.put("type", typeAupportArea.getType().getValue());
+        request.put("type", typeAupportArea.type().getValue());
 
         this.post(Routes.API_V1_TYPE_SUPPORT_AREAS_BASE, request).andExpect(
                 MockMvcResultMatchers.status().isOk()
@@ -68,16 +68,16 @@ public class TypeSupportAreaControllerTest
         var typeSupportAreaUpdate = TypeSupportAreaMother.random();
 
         var request = new HashMap<String, String>();
-        request.put("type", typeSupportAreaUpdate.getType().getValue());
+        request.put("type", typeSupportAreaUpdate.type().getValue());
 
         Mockito.when(
-            this.getRepo().findTypeSupportAreaById(typeSupportArea.getId())
+            this.getRepo().findTypeSupportAreaById(typeSupportArea.id())
         ).thenReturn(typeSupportAreaUpdate);
 
         var url =
             Routes.API_V1_TYPE_SUPPORT_AREAS_BASE +
             "/" +
-            typeSupportArea.getId().toString();
+            typeSupportArea.id().toString();
         this.put(url, request).andExpect(MockMvcResultMatchers.status().isOk());
     }
 }

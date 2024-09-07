@@ -10,10 +10,10 @@ import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaGetAl
 import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaGetById;
 import mx.edu.itoaxaca.api.v1.type_support_area.application.TypeSupportAreaUpdate;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
+import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaPrimitives;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaRepository;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaStoreRequest;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaUpdateRequest;
-import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
@@ -35,7 +35,7 @@ public class TypeSupportAreaController {
     private final TypeSupportAreaRepository repo;
 
     @GetMapping
-    Page<TypeSupportArea> index() {
+    Page<TypeSupportAreaPrimitives> index() {
         return TypeSupportAreaGetAll.run(PageRequest.of(0, 10), repo);
     }
 

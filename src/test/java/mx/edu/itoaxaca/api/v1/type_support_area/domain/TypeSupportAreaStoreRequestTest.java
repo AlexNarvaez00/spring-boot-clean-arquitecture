@@ -10,16 +10,16 @@ public class TypeSupportAreaStoreRequestTest {
 
     @Test
     void testAsTypeSupportArea() {
-        PostgresTypeSupportArea typeSupportArea = TypeSupportAreaMother.random();
+        TypeSupportArea typeSupportArea = TypeSupportAreaMother.random();
         
         var request = new TypeSupportAreaStoreRequest();
-        request.setType(typeSupportArea.getType().getValue());
+        request.setType(typeSupportArea.type().getValue());
 
         var typeSupportAreaFromReq = request.asTypeSupportArea();
 
         assertEquals(
-            typeSupportAreaFromReq.getType().toString(),
-            typeSupportArea.getType().toString()
+            typeSupportAreaFromReq.type().toString(),
+            typeSupportArea.type().toString()
         );
     } 
 }
