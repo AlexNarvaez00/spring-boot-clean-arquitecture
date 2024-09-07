@@ -17,6 +17,7 @@ import mx.edu.itoaxaca.api.v1.profile.domain.ProfileStoreRequest;
 import mx.edu.itoaxaca.api.v1.profile.domain.ProfileUpdateRequest;
 import mx.edu.itoaxaca.api.v1.shared.Config;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,6 +41,7 @@ public class ProfileController {
     @GetMapping
     Page<Profile> index(@Valid ProfileIndexRequest searchParams) {
         return ProfileGetAll.run(
+            PageRequest.of(searchParams.getPage(), searchParams.getSize()),
             repo,
             searchParams.asCriteria()
         );

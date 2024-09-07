@@ -1,5 +1,5 @@
 
-GET http://localhost:8080/api/v1/profile?size=2&name=5&email=correo&page=1
+GET http://localhost:8080/api/v1/profile?size=20&name=5&email=correo&page=2
 
 ###
 
