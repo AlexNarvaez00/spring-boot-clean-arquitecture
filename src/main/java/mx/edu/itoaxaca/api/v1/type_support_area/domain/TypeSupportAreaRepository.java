@@ -1,13 +1,8 @@
 package mx.edu.itoaxaca.api.v1.type_support_area.domain;
 
-import java.util.UUID;
-
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import java.util.List;
 
 public interface TypeSupportAreaRepository {
-    TypeSupportArea save(TypeSupportArea arg);
-    Page<TypeSupportArea> findAll(Pageable pageable);
-    void deleteById(UUID id);
-    TypeSupportArea findTypeSupportAreaById(UUID id);
+    void save(TypeSupportArea arg);
+    List<TypeSupportArea> findAll();
 }

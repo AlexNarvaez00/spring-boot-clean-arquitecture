@@ -4,7 +4,7 @@ import java.util.UUID;
 import mx.edu.itoaxaca.api.v1.groups.domain.Group;
 import mx.edu.itoaxaca.api.v1.groups.domain.GroupRepository;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Criteria;
-import mx.edu.itoaxaca.api.v1.shared.infrastructure.JPACriteriaConverter;
+import mx.edu.itoaxaca.api.v1.shared.infrastructure.hibernate.HibernateCriteriaConverter;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 public interface PostgresGroupRespository
     extends JpaRepository<Group, UUID>, JpaSpecificationExecutor<Group> ,GroupRepository {
     default Page<Group> findByCriteria(Criteria criteria, Pageable pageable) {
-        JPACriteriaConverter<Group> converter = new JPACriteriaConverter<
+        HibernateCriteriaConverter<Group> converter = new HibernateCriteriaConverter<
             Group
         >();
         return this.findAll(converter.convert(criteria), pageable);

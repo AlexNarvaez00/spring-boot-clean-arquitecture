@@ -1,20 +1,20 @@
 package mx.edu.itoaxaca.api.v1.type_support_area.application;
 
+import java.util.List;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaPrimitives;
 import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportAreaRepository;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 public class TypeSupportAreaGetAll {
 
-    public static Page<TypeSupportAreaPrimitives> run(
-        Pageable pageable,
+    public static List<TypeSupportAreaPrimitives> run(
         TypeSupportAreaRepository repo
     ) {
         return repo
-            .findAll(pageable)
+            .findAll()
+            .stream()
             .map(typeSupportArea -> {
                 return typeSupportArea.toPrimitives();
-            });
+            })
+            .toList();
     }
 }

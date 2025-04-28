@@ -6,7 +6,7 @@ import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Criteria;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filters;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Limit;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Operator;
-import mx.edu.itoaxaca.api.v1.shared.infrastructure.JPACriteriaConverter;
+import mx.edu.itoaxaca.api.v1.shared.infrastructure.hibernate.HibernateCriteriaConverter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class ProfileGetByEmail {
 
         Criteria criteria = new Criteria(Filters.fromValues(filters), new Limit(10));
 
-        JPACriteriaConverter<Profile> converter = new JPACriteriaConverter<Profile>();
+        HibernateCriteriaConverter<Profile> converter = new HibernateCriteriaConverter<Profile>();
 
         var results = repo.findAll( converter.convert(criteria), pageable);
         return results;

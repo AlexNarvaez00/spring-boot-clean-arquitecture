@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea" table="type_support_areas">
+        <id name="id" column="id" access="field" length="36" />
+
+        <property name="type" column="type" type="string" access="field" />
+    </class>
+</hibernate-mapping>

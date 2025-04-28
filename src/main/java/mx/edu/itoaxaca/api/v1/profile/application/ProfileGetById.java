@@ -9,7 +9,7 @@ import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Criteria;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Filters;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Limit;
 import mx.edu.itoaxaca.api.v1.shared.domain.criteria.Operator;
-import mx.edu.itoaxaca.api.v1.shared.infrastructure.JPACriteriaConverter;
+import mx.edu.itoaxaca.api.v1.shared.infrastructure.hibernate.HibernateCriteriaConverter;
 
 public class ProfileGetById {
 
@@ -25,7 +25,7 @@ public class ProfileGetById {
             new Limit(0)
         );
 
-        JPACriteriaConverter<Profile> converter = new JPACriteriaConverter<
+        HibernateCriteriaConverter<Profile> converter = new HibernateCriteriaConverter<
             Profile
         >();
         var results = repo.findAll(converter.convert(criteria));

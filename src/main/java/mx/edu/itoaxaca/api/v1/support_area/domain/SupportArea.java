@@ -1,6 +1,9 @@
 package mx.edu.itoaxaca.api.v1.support_area.domain;
 
+import java.util.UUID;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -10,11 +13,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import mx.edu.itoaxaca.api.v1.shared.domain.WithTimestamps;
-import mx.edu.itoaxaca.api.v1.type_support_area.infrastructure.persistence.PostgresTypeSupportArea;
+import mx.edu.itoaxaca.api.v1.type_support_area.domain.TypeSupportArea;
 
 @Data
 @Entity
@@ -37,7 +39,7 @@ public class SupportArea extends WithTimestamps{
     @ManyToOne
     @JoinColumn(name = "type_support_area_id")
     @JsonIgnore
-    private PostgresTypeSupportArea type_support_area;
+    private TypeSupportArea type_support_area;
 
     public SupportArea(UUID id, SupportAreaName name, SupportAreaShortName shortName) {
         this.id = id;
@@ -46,7 +48,7 @@ public class SupportArea extends WithTimestamps{
     }
 
     public SupportArea(UUID id, SupportAreaName name, SupportAreaShortName shortName,
-            PostgresTypeSupportArea type_support_area) {
+            TypeSupportArea type_support_area) {
         this.id = id;
         this.name = name;
         this.shortName = shortName;
